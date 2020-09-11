@@ -1,0 +1,60 @@
+@import 'variables';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    font-family: inherit;
+    background: $light-text;
+    color: $dark-text;
+}
+
+input,
+select,
+textarea,
+button {
+    font-family: inherit;
+}
+
+button {
+    background: transparent;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: $dark-text;
+    text-decoration: none;
+}
+
+.container {
+    width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+}
