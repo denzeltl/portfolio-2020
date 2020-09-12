@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import Header from './header';
+import Footer from './footer';
 import '../styles/layout.scss';
 
 const Layout = ({ children }) => {
@@ -23,11 +24,7 @@ const Layout = ({ children }) => {
             </Helmet>
             <Header siteTitle={data.site.siteMetadata.title} />
             <main className="container">{children}</main>
-            <footer>
-                © {new Date().getFullYear()}, Built with
-                {` `}
-                <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
+            <Footer />
         </>
     );
 };

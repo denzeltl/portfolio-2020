@@ -38,12 +38,57 @@ ul {
 a {
     color: $dark-text;
     text-decoration: none;
+    display: inline-block;
+}
+
+p {
+    line-height: 1.5;
 }
 
 .container {
     width: 1200px;
     min-width: 1200px;
     margin: 0 auto;
+}
+
+.button {
+    color: $light-text;
+    background: $secondary-color;
+    font-size: $text-xs;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.5rem 1.5rem;
+    z-index: 1;
+    position: relative;
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid $secondary-color;
+
+    svg {
+        margin-left: 1.5rem;
+        font-size: 1.625rem;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #fff;
+        z-index: -1;
+        transition: width 0.3s;
+    }
+
+    &:hover {
+        color: $secondary-color;
+
+        &::after {
+            width: 100%;
+        }
+    }
 }
 
 /* Media Queries */

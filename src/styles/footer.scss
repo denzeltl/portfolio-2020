@@ -1,0 +1,56 @@
+@import 'variables';
+
+.footer {
+    &__wave {
+        display: block;
+        width: 100%;
+    }
+
+    &__container {
+        margin-top: -1rem;
+        background: $primary-color;
+        color: $light-text;
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+    &__title {
+        font-size: $text-l;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: $text-s;
+        margin-bottom: 1.5rem;
+    }
+
+    &__button {
+        margin-bottom: 1.5rem;
+    }
+
+    &__links {
+        margin-bottom: 2.5rem;
+    }
+
+    &__link {
+        color: $light-text;
+        margin-right: 1.5rem;
+        transition: color 0.3s;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+
+    &__icon {
+        font-size: 2rem;
+    }
+
+    &__copyright {
+        font-size: $text-xs;
+    }
+}
