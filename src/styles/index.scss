@@ -1,0 +1,65 @@
+@import 'variables';
+
+.hero {
+    min-height: calc(100vh);
+    background: $primary-color;
+    padding-top: 6rem;
+    display: flex;
+    align-items: center;
+    color: $light-text;
+    text-align: center;
+    position: relative;
+
+    &__particles {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__text {
+        font-size: $text-m;
+        margin-bottom: 2.8rem;
+    }
+
+    &__button {
+        margin-bottom: 5rem;
+    }
+}
+
+.about {
+    padding: 3rem 0;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__details {
+        width: 750px;
+    }
+
+    &__text {
+        font-size: $text-s;
+        margin-bottom: 1.5rem;
+    }
+
+    &__image {
+        width: 350px;
+    }
+}
+
+/* Media Queries */
+@media screen and (min-width: 2000px) {
+    .hero {
+        min-height: 70rem;
+    }
+}

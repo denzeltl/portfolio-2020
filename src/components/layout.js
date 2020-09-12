@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
                 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
             </Helmet>
             <Header siteTitle={data.site.siteMetadata.title} />
-            <main className="container">{children}</main>
+            <main className="main">{children}</main>
             <Footer />
         </>
     );
