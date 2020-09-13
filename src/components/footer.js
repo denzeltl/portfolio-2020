@@ -22,10 +22,10 @@ const Footer = () => (
                     <a href="#" className="footer__link">
                         <IoIosMail className="footer__icon" />
                     </a>
-                    <a href="#" className="footer__link">
+                    <a href="#" target="_blank" className="footer__link">
                         <IoLogoLinkedin className="footer__icon" />
                     </a>
-                    <a href="#" className="footer__link">
+                    <a href="#" target="_blank" className="footer__link">
                         <IoLogoGithub className="footer__icon" />
                     </a>
                 </ul>

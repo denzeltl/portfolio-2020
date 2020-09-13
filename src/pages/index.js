@@ -8,7 +8,8 @@ import SEO from '../components/seo';
 
 import Particles from 'react-particles-js';
 import { BsArrowRight } from 'react-icons/bs';
-import { SiHtml5, SiCss3, SiJavascript, SiPhp, SiReact, SiSass, SiJquery, SiTailwindcss, SiGit, SiGithub, SiNpm, SiGraphql } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiPhp, SiReact, SiSass, SiJquery, SiTailwindcss, SiGit, SiGithub, SiNpm, SiGraphql, SiNetlify } from 'react-icons/si';
+import { FiExternalLink } from 'react-icons/fi';
 
 import '../styles/index.scss';
 
@@ -17,7 +18,28 @@ const IndexPage = () => {
         query {
             headDp: file(relativePath: { eq: "head-display-picture.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 350) {
+                    fluid(maxWidth: 2000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            projectPomodoro: file(relativePath: { eq: "project-pomodoro.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            projectWeather: file(relativePath: { eq: "project-weather.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2000) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            projectRr: file(relativePath: { eq: "project-rr.png" }) {
+                childImageSharp {
+                    fluid(maxWidth: 2000) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -87,74 +109,189 @@ const IndexPage = () => {
                 </div>
             </section>
             <section className="skills">
-                <h3 className="title title__center skills__title">Skills</h3>
-                <div className="skills__container">
-                    <p className="skills__container__title">These are the main languages, frameworks / libraries, and tools that I use / have used.</p>
-                    <div className="skills__container__content">
-                        <div className="skills__skillset">
-                            <h4 className="skills__skillset__title">Languages</h4>
-                            <ul className="skills__skillset__list">
-                                <li className="skills__skillset__item">
-                                    <SiHtml5 className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">HTML</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiCss3 className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">CSS</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiJavascript className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">JavaScript</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiPhp className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">PHP</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="skills__skillset">
-                            <h4 className="skills__skillset__title">Frameworks / Libraries</h4>
-                            <ul className="skills__skillset__list">
-                                <li className="skills__skillset__item">
-                                    <SiReact className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">React</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiSass className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">Sass</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiJquery className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">jQuery</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiTailwindcss className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">Tailwind CSS</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="skills__skillset">
-                            <h4 className="skills__skillset__title">Tools</h4>
-                            <ul className="skills__skillset__list">
-                                <li className="skills__skillset__item">
-                                    <SiGit className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">Git</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiGithub className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">GitHub</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiNpm className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">npm</p>
-                                </li>
-                                <li className="skills__skillset__item">
-                                    <SiGraphql className="skills__skillset__icon" />
-                                    <p className="skills__skillset__name">GraphQL</p>
-                                </li>
-                            </ul>
+                <div className="container">
+                    <h3 className="title title__center skills__title">Skills</h3>
+                    <div className="skills__container">
+                        <p className="skills__container__title">These are the main languages, frameworks / libraries, and tools that I use / have used.</p>
+                        <div className="skills__container__content">
+                            <div className="skills__skillset">
+                                <h4 className="skills__skillset__title">Languages</h4>
+                                <ul className="skills__skillset__list">
+                                    <li className="skills__skillset__item">
+                                        <SiHtml5 className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">HTML</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiCss3 className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">CSS</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiJavascript className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">JavaScript</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiPhp className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">PHP</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="skills__skillset">
+                                <h4 className="skills__skillset__title">Frameworks / Libraries</h4>
+                                <ul className="skills__skillset__list">
+                                    <li className="skills__skillset__item">
+                                        <SiReact className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">React</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiSass className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">Sass</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiJquery className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">jQuery</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiTailwindcss className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">Tailwind CSS</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="skills__skillset">
+                                <h4 className="skills__skillset__title">Tools</h4>
+                                <ul className="skills__skillset__list">
+                                    <li className="skills__skillset__item">
+                                        <SiGit className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">Git</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiNpm className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">npm</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiGraphql className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">GraphQL</p>
+                                    </li>
+                                    <li className="skills__skillset__item">
+                                        <SiNetlify className="skills__skillset__icon" />
+                                        <p className="skills__skillset__name">Netlify</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section className="projects">
+                <div className="container">
+                    <h3 className="title title__center projects__title">Featured Projects</h3>
+                    <ul className="projects__list">
+                        <li className="projects__item">
+                            <div className="projects__item__image">
+                                <Img fluid={data.projectPomodoro.childImageSharp.fluid} alt="Screenshot of Pomodoro Project" />
+                            </div>
+                            <div className="projects__item__details">
+                                <div className="projects__item__head">
+                                    <h4 className="projects__item__head__title">Pomodoro Timer</h4>
+                                    <p className="projects__item__head__date">August 2020</p>
+                                </div>
+                                <p className="projects__item__body">
+                                    A PWA Pomodoro Timer made with React which can be installed as desktop or mobile app, the app will show an offline page when not connected to the internet. The
+                                    timer also includes extra features (reminders) which can be toggled inside the settings.
+                                </p>
+                                <div className="projects__item__foot">
+                                    <ul className="projects__item__foot__tools">
+                                        <li>React</li>
+                                        <li>Sass</li>
+                                        <li>PWA</li>
+                                        <li>Netlify</li>
+                                    </ul>
+                                    <ul className="projects__item__foot__links">
+                                        <li>
+                                            <a href="https://github.com/denzeltl/pomodoro" target="_blank">
+                                                <SiGithub />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://denzeltl-pomodoro.netlify.app/" target="_blank">
+                                                <FiExternalLink />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="projects__item">
+                            <div className="projects__item__image">
+                                <Img fluid={data.projectWeather.childImageSharp.fluid} alt="Screenshot of Weather App Project" />
+                            </div>
+                            <div className="projects__item__details">
+                                <div className="projects__item__head">
+                                    <h4 className="projects__item__head__title">Weather App</h4>
+                                    <p className="projects__item__head__date">January 2020</p>
+                                </div>
+                                <p className="projects__item__body">
+                                    A simple weather app that displays the time, date, and temperature of a city using the api of OpenWeatherMap. Querying letters returns a list of available cities.
+                                </p>
+                                <div className="projects__item__foot">
+                                    <ul className="projects__item__foot__tools">
+                                        <li>HTML</li>
+                                        <li>Sass</li>
+                                        <li>JavaScript</li>
+                                        <li>API</li>
+                                    </ul>
+                                    <ul className="projects__item__foot__links">
+                                        <li>
+                                            <a href="https://github.com/denzeltl/weather-app" target="_blank">
+                                                <SiGithub />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://denzeltl.github.io/weather-app/" target="_blank">
+                                                <FiExternalLink />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li className="projects__item">
+                            <div className="projects__item__image">
+                                <Img fluid={data.projectRr.childImageSharp.fluid} alt="Screenshot of Rolls-Royce Project" />
+                            </div>
+                            <div className="projects__item__details">
+                                <div className="projects__item__head">
+                                    <h4 className="projects__item__head__title">Rolls-Royce Wraith Landing Page</h4>
+                                    <p className="projects__item__head__date">September 2018</p>
+                                </div>
+                                <p className="projects__item__body">
+                                    My take on freeCodeCamp's Responsive Web Design Projects - Build a Product Landing Page. I redesigned the landing page of Rolls-Royce Wraith with some inspiration
+                                    from Scrimba...
+                                </p>
+                                <div className="projects__item__foot">
+                                    <ul className="projects__item__foot__tools">
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>Bulma</li>
+                                    </ul>
+                                    <ul className="projects__item__foot__links">
+                                        <li>
+                                            <a href="https://github.com/denzeltl/rr-wraith" target="_blank">
+                                                <SiGithub />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://denzeltl.github.io/rr-wraith/" target="_blank">
+                                                <FiExternalLink />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <Link to="/projects" className="button projects__button">
+                        View More <BsArrowRight />
+                    </Link>
                 </div>
             </section>
         </Layout>
