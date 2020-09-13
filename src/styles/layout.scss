@@ -105,6 +105,15 @@ p {
         height: 7px;
         border-bottom: 7px solid $secondary-color;
     }
+
+    &__center {
+        text-align: center;
+
+        &::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
 }
 
 /* Media Queries */
