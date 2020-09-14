@@ -195,7 +195,7 @@ const IndexPage = () => {
                                         </p>
                                     </div>
                                     <div className="image-container">
-                                        <Img fluid={data.projectPomodoro.childImageSharp.fluid} alt="Screenshot of Pomodoro Project" />
+                                        <Img fluid={data.projectPomodoro.childImageSharp.fluid} style={{ maxHeight: '21rem' }} alt="Screenshot of Pomodoro Project" />
                                     </div>
                                 </a>
                             </div>
@@ -240,7 +240,12 @@ const IndexPage = () => {
                                         </p>
                                     </div>
                                     <div className="image-container">
-                                        <Img fluid={data.projectWeather.childImageSharp.fluid} alt="Screenshot of Weather App Project" />
+                                        <Img
+                                            fluid={data.projectWeather.childImageSharp.fluid}
+                                            style={{ maxHeight: '21rem' }}
+                                            imgStyle={{ objectPosition: 'center top' }}
+                                            alt="Screenshot of Weather App Project"
+                                        />
                                     </div>
                                 </a>
                             </div>
@@ -285,7 +290,7 @@ const IndexPage = () => {
                                         </p>
                                     </div>
                                     <div className="image-container">
-                                        <Img fluid={data.projectRr.childImageSharp.fluid} alt="Screenshot of Rolls-Royce Project" />
+                                        <Img fluid={data.projectRr.childImageSharp.fluid} style={{ maxHeight: '21rem' }} alt="Screenshot of Rolls-Royce Project" />
                                     </div>
                                 </a>
                             </div>
