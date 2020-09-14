@@ -187,7 +187,17 @@ const IndexPage = () => {
                     <ul className="projects__list">
                         <li className="projects__item">
                             <div className="projects__item__image">
-                                <Img fluid={data.projectPomodoro.childImageSharp.fluid} alt="Screenshot of Pomodoro Project" />
+                                <a href="https://denzeltl-pomodoro.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                    <div className="overlay"></div>
+                                    <div className="text">
+                                        <p>
+                                            Visit Site <FiExternalLink />
+                                        </p>
+                                    </div>
+                                    <div className="image-container">
+                                        <Img fluid={data.projectPomodoro.childImageSharp.fluid} alt="Screenshot of Pomodoro Project" />
+                                    </div>
+                                </a>
                             </div>
                             <div className="projects__item__details">
                                 <div className="projects__item__head">
@@ -195,8 +205,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">August 2020</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    A PWA Pomodoro Timer made with React which can be installed as desktop or mobile app, the app will show an offline page when not connected to the internet. The
-                                    timer also includes extra features (reminders) which can be toggled inside the settings.
+                                    A PWA Pomodoro Timer made with React which can be installed as desktop or mobile app, the app shows an offline page when not connected to the internet. Aside from
+                                    its timer feature, it also contains reminders which can be toggled inside the settings.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">
@@ -207,12 +217,12 @@ const IndexPage = () => {
                                     </ul>
                                     <ul className="projects__item__foot__links">
                                         <li>
-                                            <a href="https://github.com/denzeltl/pomodoro" target="_blank">
+                                            <a rel="noopener noreferrer" href="https://github.com/denzeltl/pomodoro" target="_blank">
                                                 <SiGithub />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://denzeltl-pomodoro.netlify.app/" target="_blank">
+                                            <a rel="noopener noreferrer" href="https://denzeltl-pomodoro.netlify.app/" target="_blank">
                                                 <FiExternalLink />
                                             </a>
                                         </li>
@@ -222,7 +232,17 @@ const IndexPage = () => {
                         </li>
                         <li className="projects__item">
                             <div className="projects__item__image">
-                                <Img fluid={data.projectWeather.childImageSharp.fluid} alt="Screenshot of Weather App Project" />
+                                <a rel="noopener noreferrer" href="https://denzeltl.github.io/weather-app/" target="_blank">
+                                    <div className="overlay"></div>
+                                    <div className="text">
+                                        <p>
+                                            Visit Site <FiExternalLink />
+                                        </p>
+                                    </div>
+                                    <div className="image-container">
+                                        <Img fluid={data.projectWeather.childImageSharp.fluid} alt="Screenshot of Weather App Project" />
+                                    </div>
+                                </a>
                             </div>
                             <div className="projects__item__details">
                                 <div className="projects__item__head">
@@ -230,7 +250,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">January 2020</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    A simple weather app that displays the time, date, and temperature of a city using the api of OpenWeatherMap. Querying letters returns a list of available cities.
+                                    A simple weather app that fetches and displays the local timezone, weather, and temperature of a city using the api from <i>OpenWeatherMap</i>. Querying letters in
+                                    the search box will return a list of available cities.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">
@@ -241,12 +262,12 @@ const IndexPage = () => {
                                     </ul>
                                     <ul className="projects__item__foot__links">
                                         <li>
-                                            <a href="https://github.com/denzeltl/weather-app" target="_blank">
+                                            <a rel="noopener noreferrer" href="https://github.com/denzeltl/weather-app" target="_blank">
                                                 <SiGithub />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://denzeltl.github.io/weather-app/" target="_blank">
+                                            <a rel="noopener noreferrer" href="https://denzeltl.github.io/weather-app/" target="_blank">
                                                 <FiExternalLink />
                                             </a>
                                         </li>
@@ -256,7 +277,17 @@ const IndexPage = () => {
                         </li>
                         <li className="projects__item">
                             <div className="projects__item__image">
-                                <Img fluid={data.projectRr.childImageSharp.fluid} alt="Screenshot of Rolls-Royce Project" />
+                                <a rel="noopener noreferrer" href="https://denzeltl.github.io/rr-wraith/" target="_blank">
+                                    <div className="overlay"></div>
+                                    <div className="text">
+                                        <p>
+                                            Visit Site <FiExternalLink />
+                                        </p>
+                                    </div>
+                                    <div className="image-container">
+                                        <Img fluid={data.projectRr.childImageSharp.fluid} alt="Screenshot of Rolls-Royce Project" />
+                                    </div>
+                                </a>
                             </div>
                             <div className="projects__item__details">
                                 <div className="projects__item__head">
@@ -264,8 +295,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">September 2018</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    My take on freeCodeCamp's Responsive Web Design Projects - Build a Product Landing Page. I redesigned the landing page of Rolls-Royce Wraith with some inspiration
-                                    from Scrimba...
+                                    One of my first personal projects taken from freeCodeCamp's <i>Responsive Web Design Projects - Build a Product Landing Page</i>. I redesigned the landing page of
+                                    Rolls-Royce Wraith.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">
@@ -275,12 +306,12 @@ const IndexPage = () => {
                                     </ul>
                                     <ul className="projects__item__foot__links">
                                         <li>
-                                            <a href="https://github.com/denzeltl/rr-wraith" target="_blank">
+                                            <a rel="noopener noreferrer" href="https://github.com/denzeltl/rr-wraith" target="_blank">
                                                 <SiGithub />
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://denzeltl.github.io/rr-wraith/" target="_blank">
+                                            <a rel="noopener noreferrer" href="https://denzeltl.github.io/rr-wraith/" target="_blank">
                                                 <FiExternalLink />
                                             </a>
                                         </li>
