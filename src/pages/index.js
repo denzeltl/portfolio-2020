@@ -300,8 +300,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">September 2018</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    One of my first personal projects taken from freeCodeCamp's <i>Responsive Web Design Projects - Build a Product Landing Page</i>. I redesigned the landing page of
-                                    Rolls-Royce Wraith.
+                                    My first website project created — this challenge is taken from freeCodeCamp's <i>Responsive Web Design Projects - Build a Product Landing Page</i>. I redesigned
+                                    the landing page of Rolls-Royce Wraith.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">
