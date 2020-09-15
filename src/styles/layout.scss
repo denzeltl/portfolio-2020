@@ -117,14 +117,45 @@ p {
 }
 
 /* Media Queries */
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1300px) {
+    html {
+        font-size: 19px;
+    }
+
+    .container {
+        width: 1050px;
+        min-width: 1050px;
+    }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1120px) {
+    html {
+        font-size: 18px;
+    }
+
+    .container {
+        width: auto;
+        min-width: auto;
+        margin: 0 3rem;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 17px;
+    }
+
+    .container {
+        margin: 0 2rem;
+    }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 680px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        margin: 0 1.5rem;
+    }
 }

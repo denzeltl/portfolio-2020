@@ -205,8 +205,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">August 2020</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    A PWA Pomodoro Timer made with React which can be installed as desktop or mobile app, the app shows an offline page when not connected to the internet. Aside from
-                                    its timer feature, it also contains reminders which can be toggled inside the settings.
+                                    A PWA Pomodoro Timer made with React which can be installed as a desktop or mobile app. Aside from its timer feature, it also contains reminders which can be
+                                    toggled on or off inside the settings.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">
@@ -300,8 +300,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">September 2018</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    My first website project created — this challenge is taken from freeCodeCamp's <i>Responsive Web Design Projects - Build a Product Landing Page</i>. I redesigned
-                                    the landing page of Rolls-Royce Wraith.
+                                    My first website project created — this challenge is taken from freeCodeCamp's <i>Responsive Web Design - Build a Product Landing Page</i> project. I redesigned the
+                                    landing page of Rolls-Royce Wraith.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">

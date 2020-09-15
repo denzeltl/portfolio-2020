@@ -1,16 +1,13 @@
 @import 'variables';
 
 .footer {
-    &__wave {
-        display: block;
-        width: 100%;
-    }
+    background: $primary-color;
+    color: $light-text;
+    padding: 3rem 0 1rem;
 
     &__container {
-        background: $primary-color;
-        color: $light-text;
         text-align: center;
-        padding: 3rem 0 1rem;
+        margin-bottom: 2.5rem;
     }
 
     &__title {
@@ -25,10 +22,6 @@
 
     &__button {
         margin-bottom: 1.6rem;
-    }
-
-    &__links {
-        margin-bottom: 2.5rem;
     }
 
     &__link {
@@ -51,5 +44,38 @@
 
     &__copyright {
         font-size: $text-xs;
+        text-align: center;
     }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1300px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+
+        &__container {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+
+        &__button {
+            margin-bottom: 0;
+        }
+
+        &__link {
+            margin-right: 1.8rem;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
 }

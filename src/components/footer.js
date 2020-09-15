@@ -8,16 +8,18 @@ import '../styles/footer.scss';
 
 const Footer = () => (
     <footer className="footer">
-        <div className="footer__container">
-            <div className="container">
-                <h3 className="footer__title">Let's get in touch!</h3>
-                <p className="footer__text">
-                    Have something to say? Feel free to leave a message.
-                    <br />I would love to hear from you!
-                </p>
-                <Link to="/contact" className="button footer__button">
-                    Contact Me <BsArrowRight />
-                </Link>
+        <div className="container">
+            <div className="footer__container">
+                <div className="footer__contact">
+                    <h3 className="footer__title">Let's get in touch!</h3>
+                    <p className="footer__text">
+                        Have something to say? Feel free to leave a message.
+                        <br />I would love to hear from you!
+                    </p>
+                    <Link to="/contact" className="button footer__button">
+                        Contact Me <BsArrowRight />
+                    </Link>
+                </div>
                 <ul className="footer__links">
                     <a href="#" className="footer__link">
                         <IoIosMail className="footer__icon" />
@@ -29,8 +31,8 @@ const Footer = () => (
                         <IoLogoGithub className="footer__icon" />
                     </a>
                 </ul>
-                <p className="footer__copyright">© 2020 Denzel Tiam-Lee</p>
             </div>
+            <p className="footer__copyright">© 2020 Denzel Tiam-Lee</p>
         </div>
     </footer>
 );

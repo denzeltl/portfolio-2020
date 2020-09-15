@@ -1,7 +1,7 @@
 @import 'variables';
 
 .hero {
-    min-height: calc(100vh);
+    min-height: 100vh;
     background: $primary-color;
     padding-top: 6rem;
     display: flex;
@@ -216,7 +216,7 @@
         &__details {
             background: $light-text;
             position: absolute;
-            max-width: 640px;
+            max-width: 610px;
             top: 50%;
             right: 0;
             transform: translateY(-50%);
@@ -310,4 +310,47 @@
     .hero {
         min-height: 70rem;
     }
+}
+
+@media screen and (max-width: 1300px) {
+    .hero {
+        text-align: left;
+    }
+
+    .about {
+        &__details {
+            width: 630px;
+        }
+
+        &__image {
+            width: 330px;
+        }
+    }
+
+    .skills {
+        &__container {
+            max-width: 900px;
+        }
+    }
+
+    .projects {
+        &__item {
+            &__image {
+                max-width: 550px;
+            }
+
+            &__details {
+                max-width: 580px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
 }
