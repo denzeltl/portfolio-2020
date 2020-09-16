@@ -147,6 +147,16 @@
 
 @media screen and (max-width: 680px) {
     .header {
+        &__nav {
+            a {
+                margin-right: 1.8rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
         padding: 0 1.5rem;
 
         &__nav {
