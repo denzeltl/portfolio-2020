@@ -7,9 +7,14 @@ import '../styles/header.scss';
 
 const Header = () => {
     const [scrolledNavbar, setScrolledNavbar] = useState(false);
+    const [toggledButton, setToggledButton] = useState(false);
     const navRef = useRef();
 
     navRef.current = scrolledNavbar;
+
+    const toggleNavbar = () => {
+        setToggledButton(!toggledButton);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,13 +33,13 @@ const Header = () => {
     return (
         <header className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}>
             <div className="header__inner">
-                <h1 className="header__logo">
+                <h1 className={`header__logo ${toggledButton ? 'is-toggled' : ''}`}>
                     <Link to="/">denzeltl</Link>
                 </h1>
-                <button className="header__burger">
+                <button onClick={toggleNavbar} className="header__burger">
                     <IoIosMenu />
                 </button>
-                <nav className="header__nav">
+                <nav className={`header__nav ${toggledButton ? 'is-toggled' : ''}`}>
                     <Link activeClassName="is-active" to="/">
                         Home
                     </Link>
@@ -44,7 +49,7 @@ const Header = () => {
                     <Link activeClassName="is-active" to="/projects">
                         Projects
                     </Link>
-                    <Link activeClassName="is-active" to="/contact">
+                    <Link className="is-contact" activeClassName="is-active" to="/contact">
                         Contact
                     </Link>
                     <ul className="header__links">
@@ -58,7 +63,7 @@ const Header = () => {
                             <IoLogoGithub className="header__icon" />
                         </a>
                     </ul>
-                    <button className="header__close">
+                    <button onClick={toggleNavbar} className="header__close">
                         <IoMdClose />
                     </button>
                 </nav>

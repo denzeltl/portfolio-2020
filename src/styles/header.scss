@@ -58,7 +58,8 @@
                 color: $dark-text;
             }
 
-            &:last-child {
+            &:last-child,
+            &.is-contact {
                 margin-right: 0;
             }
 
@@ -106,6 +107,10 @@
     }
 
     &__links {
+        display: none;
+    }
+
+    &__close {
         display: none;
     }
 }
@@ -175,8 +180,8 @@
         height: 5rem;
 
         &__logo {
-            a {
-                .is-toggled & {
+            &.is-toggled {
+                a {
                     color: $light-text;
                 }
             }
@@ -207,7 +212,11 @@
             flex-direction: column;
             padding: 0 1.5rem;
             transition: transform 0.3s ease-in-out;
-            transform: translateX(0);
+            transform: translateX(100%);
+
+            &.is-toggled {
+                transform: translateX(0);
+            }
 
             a {
                 margin-right: 0;
@@ -231,6 +240,12 @@
                     &:last-child {
                         margin-right: 0;
                     }
+
+                    &:hover {
+                        &::after {
+                            content: none;
+                        }
+                    }
                 }
             }
         }
@@ -241,10 +256,12 @@
         }
 
         &__close {
+            display: block;
             position: absolute;
             top: 1.5rem;
             right: 1.1rem;
             font-size: 2rem;
+            height: 2rem;
             color: $light-text;
         }
     }
