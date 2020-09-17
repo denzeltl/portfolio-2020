@@ -347,9 +347,156 @@
 }
 
 @media screen and (max-width: 1120px) {
+    .about {
+        &__details {
+            flex: 1;
+            width: 100%;
+            margin-right: 2rem;
+        }
+
+        &__image {
+            width: 32%;
+        }
+    }
+
+    .projects {
+        &__item {
+            &__image {
+                max-width: 60%;
+            }
+
+            &__details {
+                max-width: 54%;
+                padding: 2rem;
+            }
+
+            &__head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                &__title {
+                    font-size: $text-m;
+                }
+
+                &__date {
+                    color: $gray-text;
+                    font-size: $text-xs;
+                }
+            }
+
+            &__body {
+                font-size: $text-s;
+                margin-bottom: 2rem;
+            }
+
+            &__foot {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__tools {
+                    li {
+                        display: inline-block;
+                        margin-right: 0.8rem;
+                        font-size: $text-xs;
+                        border: 2px solid $gray-text;
+                        padding: 0.3rem 0.5rem;
+                        border-radius: 5px;
+                        color: $gray-text;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                &__links {
+                    li {
+                        display: inline-block;
+                        margin-right: 0.8rem;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        a {
+                            transition: color 0.3s;
+                            font-size: 1.5rem;
+
+                            &:hover {
+                                color: $secondary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 815px) {
+    .about {
+        &__container {
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+        }
+
+        &__details {
+            width: 90%;
+        }
+
+        &__text {
+            font-size: $text-s;
+            margin-bottom: 1.5rem;
+        }
+
+        &__image {
+            width: 250px;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    .skills {
+        &::after {
+            height: 20.4rem;
+        }
+
+        &__container {
+            max-width: 85%;
+
+            &__title {
+                max-width: 100%;
+            }
+
+            &__content {
+                flex-direction: column;
+            }
+        }
+
+        &__skillset {
+            margin-bottom: 2rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &__title {
+                margin-bottom: 1.5rem;
+            }
+
+            &__item {
+                &:nth-child(n + 3) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 680px) {

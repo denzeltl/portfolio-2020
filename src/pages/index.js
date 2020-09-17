@@ -96,7 +96,7 @@ const IndexPage = () => {
                     <div className="about__details">
                         <h3 className="title about__title">About Me</h3>
                         <p className="about__text">
-                            I'm passionate about all the things that I do. I continuously seek knowledge from different challenges and experiences. During my free time, I like to learn to keep myself
+                            I'm passionate about the things that I do. I continuously seek knowledge from different challenges and experiences. During my free time, I like to learn to keep myself
                             up-to-date with the latest technologies and find ways to further improve my skill set.
                         </p>
                         <Link to="/about" className="button about__button">
