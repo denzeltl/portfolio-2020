@@ -136,7 +136,7 @@
 }
 
 .projects {
-    padding: 3rem 0;
+    padding: 1rem 0 3rem;
     background: #d8dce2;
     text-align: center;
 
@@ -229,7 +229,7 @@
         &__head {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 1rem;
 
             &__title {
@@ -366,15 +366,12 @@
         }
 
         &__item {
-            margin-bottom: 4rem;
-
             &__image {
                 max-width: 60%;
             }
 
             &__details {
                 max-width: 50%;
-                transform: translateY(-35%);
                 padding: 1.5rem;
             }
 
@@ -423,11 +420,8 @@
         }
 
         &__item {
-            margin-bottom: 4rem;
-
             &__details {
                 max-width: 52%;
-                transform: translateY(-40%);
             }
         }
     }
@@ -511,6 +505,7 @@
         &__item {
             margin-bottom: 2rem;
             max-width: 520px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 
             &__image {
                 max-width: 100%;
@@ -522,63 +517,6 @@
                 transform: none;
                 box-shadow: none;
             }
-
-            // TODO:
-            &__foot {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                &__tools {
-                    li {
-                        display: inline-block;
-                        margin-right: 0.8rem;
-                        font-size: $text-xs;
-                        border: 2px solid $gray-text;
-                        padding: 0.3rem 0.5rem;
-                        border-radius: 5px;
-                        color: $gray-text;
-
-                        &:last-child {
-                            margin-right: 0;
-                        }
-                    }
-                }
-
-                &__links {
-                    li {
-                        display: inline-block;
-                        margin-right: 0.8rem;
-
-                        &:last-child {
-                            margin-right: 0;
-                        }
-
-                        a {
-                            transition: color 0.3s;
-                            font-size: 1.5rem;
-
-                            &:hover {
-                                color: $secondary-color;
-                            }
-                        }
-                    }
-                }
-            }
-
-            &:nth-child(2) {
-                .projects__item__image {
-                    margin-left: auto;
-                }
-
-                .projects__item__details {
-                    left: 0;
-                }
-            }
-        }
-
-        &__button {
-            margin: 0 auto;
         }
     }
 }
@@ -671,100 +609,22 @@
     }
 
     .projects {
+        &__container {
+            margin: 0 1.5rem;
+        }
+
         &__item {
-            margin-bottom: 2rem;
-            position: relative;
+            max-width: 100%;
 
-            &__image {
-                max-width: 700px;
-
-                a {
-                    display: block;
-                    overflow: hidden;
-                    position: relative;
-
-                    .overlay {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        content: '';
-                        background: $secondary-color;
-                        z-index: 5;
-                        opacity: 0;
-                        transition: opacity 0.3s;
-                    }
-
-                    .text {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        content: '';
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        z-index: 5;
-                        opacity: 0;
-                        transition: opacity 0.3s;
-
-                        p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: $light-text;
-                            font-size: $text-m;
-                            font-weight: 700;
-
-                            svg {
-                                margin-left: 0.5rem;
-                            }
-                        }
-                    }
-
-                    .image-container {
-                        transition: transform 0.3s ease-in-out;
-                    }
-
-                    &:hover {
-                        .overlay {
-                            opacity: 0.85;
-                        }
-
-                        .text {
-                            opacity: 1;
-                        }
-
-                        .image-container {
-                            transform: scale(1.1);
-                        }
-                    }
+            &__head {
+                &__date {
+                    padding-left: 1rem;
                 }
             }
 
-            &__details {
-                background: $light-text;
-                position: absolute;
-                max-width: 610px;
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%);
-                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-                padding: 2rem;
-                z-index: 10;
-                text-align: left;
-            }
-
-            &__head {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-
-                &__title {
-                    font-size: $text-m-sp;
+            &__foot {
+                &__links {
+                    width: 6rem;
                 }
             }
         }
