@@ -182,7 +182,7 @@ const IndexPage = () => {
                 </div>
             </section>
             <section className="projects">
-                <div className="container">
+                <div className="container projects__container">
                     <h3 className="title title__center projects__title">Featured Projects</h3>
                     <ul className="projects__list">
                         <li className="projects__item">

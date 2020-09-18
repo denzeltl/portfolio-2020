@@ -45,6 +45,10 @@ p {
     line-height: 1.5;
 }
 
+.is-sp {
+    display: none;
+}
+
 .container {
     width: 1200px;
     min-width: 1200px;
@@ -157,7 +161,15 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+    .is-sp {
+        display: block;
+    }
+
     .container {
         margin: 0 1.5rem;
+    }
+
+    .title {
+        font-size: $text-xl-sp;
     }
 }

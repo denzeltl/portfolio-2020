@@ -70,7 +70,7 @@
         height: 14.2rem;
         pointer-events: none;
         position: absolute;
-        bottom: 0;
+        bottom: -3px;
         left: 0;
         right: 0;
         z-index: -1;
@@ -360,74 +360,54 @@
     }
 
     .projects {
+        &__container {
+            width: 850px;
+            margin: 0 auto;
+        }
+
         &__item {
+            margin-bottom: 4rem;
+
             &__image {
                 max-width: 60%;
             }
 
             &__details {
-                max-width: 54%;
-                padding: 2rem;
+                max-width: 50%;
+                transform: translateY(-35%);
+                padding: 1.5rem;
             }
 
             &__head {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1rem;
-
-                &__title {
-                    font-size: $text-m;
-                }
-
                 &__date {
-                    color: $gray-text;
-                    font-size: $text-xs;
+                    text-align: right;
                 }
             }
 
             &__body {
-                font-size: $text-s;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
 
             &__foot {
-                display: flex;
                 align-items: center;
-                justify-content: space-between;
 
                 &__tools {
                     li {
-                        display: inline-block;
-                        margin-right: 0.8rem;
-                        font-size: $text-xs;
-                        border: 2px solid $gray-text;
-                        padding: 0.3rem 0.5rem;
-                        border-radius: 5px;
-                        color: $gray-text;
-
-                        &:last-child {
-                            margin-right: 0;
-                        }
+                        margin-top: 0.25rem;
+                        margin-bottom: 0.25rem;
+                        margin-right: 0.5rem;
                     }
                 }
 
                 &__links {
-                    li {
-                        display: inline-block;
-                        margin-right: 0.8rem;
+                    width: 4rem;
+                    text-align: right;
 
-                        &:last-child {
-                            margin-right: 0;
-                        }
+                    li {
+                        margin-right: 0.5rem;
 
                         a {
-                            transition: color 0.3s;
-                            font-size: 1.5rem;
-
-                            &:hover {
-                                color: $secondary-color;
-                            }
+                            font-size: 1.4rem;
                         }
                     }
                 }
@@ -437,11 +417,26 @@
 }
 
 @media screen and (max-width: 900px) {
+    .projects {
+        &__container {
+            width: 760px;
+        }
+
+        &__item {
+            margin-bottom: 4rem;
+
+            &__details {
+                max-width: 52%;
+                transform: translateY(-40%);
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 815px) {
     .about {
         &__container {
+            text-align: center;
             align-items: center;
             justify-content: space-between;
             flex-direction: column-reverse;
@@ -449,11 +444,14 @@
 
         &__details {
             width: 90%;
+            margin-right: 0;
         }
 
-        &__text {
-            font-size: $text-s;
-            margin-bottom: 1.5rem;
+        &__title {
+            &::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
         &__image {
@@ -497,7 +495,278 @@
             }
         }
     }
+
+    .projects {
+        &__container {
+            width: auto;
+            margin: 0 2rem;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        &__item {
+            margin-bottom: 2rem;
+            max-width: 520px;
+
+            &__image {
+                max-width: 100%;
+            }
+
+            &__details {
+                max-width: 100%;
+                position: static;
+                transform: none;
+                box-shadow: none;
+            }
+
+            // TODO:
+            &__foot {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__tools {
+                    li {
+                        display: inline-block;
+                        margin-right: 0.8rem;
+                        font-size: $text-xs;
+                        border: 2px solid $gray-text;
+                        padding: 0.3rem 0.5rem;
+                        border-radius: 5px;
+                        color: $gray-text;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                &__links {
+                    li {
+                        display: inline-block;
+                        margin-right: 0.8rem;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        a {
+                            transition: color 0.3s;
+                            font-size: 1.5rem;
+
+                            &:hover {
+                                color: $secondary-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                .projects__item__image {
+                    margin-left: auto;
+                }
+
+                .projects__item__details {
+                    left: 0;
+                }
+            }
+        }
+
+        &__button {
+            margin: 0 auto;
+        }
+    }
 }
 
 @media screen and (max-width: 680px) {
+    .skills {
+        &__container {
+            &__title {
+                max-width: 565px;
+            }
+
+            &__content {
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+        }
+
+        &__skillset {
+            max-width: 12rem;
+
+            &__list {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin: 0 auto;
+            }
+
+            &__item {
+                width: 5.5rem;
+                color: $gray-text;
+
+                &:nth-child(n + 3) {
+                    margin-top: 1rem;
+                }
+            }
+
+            &__icon {
+                font-size: 2.5rem;
+                margin-bottom: 0.2rem;
+            }
+
+            &__name {
+                font-size: $text-xs;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero {
+        &__title {
+            font-size: 2.5rem;
+        }
+
+        &__text {
+            font-size: $text-m-sp;
+        }
+    }
+
+    .about {
+        &__container {
+            text-align: left;
+        }
+
+        &__title {
+            &::after {
+                left: 0;
+                transform: translateX(0);
+            }
+        }
+
+        &__details {
+            width: 100%;
+        }
+    }
+
+    .skills {
+        &::after {
+            height: 28.8rem;
+        }
+
+        &__container {
+            max-width: 100%;
+
+            &__title {
+                font-size: $text-m-sp;
+                max-width: 90%;
+            }
+        }
+    }
+
+    .projects {
+        &__item {
+            margin-bottom: 2rem;
+            position: relative;
+
+            &__image {
+                max-width: 700px;
+
+                a {
+                    display: block;
+                    overflow: hidden;
+                    position: relative;
+
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        background: $secondary-color;
+                        z-index: 5;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                    }
+
+                    .text {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        content: '';
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 5;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+
+                        p {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: $light-text;
+                            font-size: $text-m;
+                            font-weight: 700;
+
+                            svg {
+                                margin-left: 0.5rem;
+                            }
+                        }
+                    }
+
+                    .image-container {
+                        transition: transform 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        .overlay {
+                            opacity: 0.85;
+                        }
+
+                        .text {
+                            opacity: 1;
+                        }
+
+                        .image-container {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+
+            &__details {
+                background: $light-text;
+                position: absolute;
+                max-width: 610px;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+                padding: 2rem;
+                z-index: 10;
+                text-align: left;
+            }
+
+            &__head {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                &__title {
+                    font-size: $text-m-sp;
+                }
+            }
+        }
+    }
 }
