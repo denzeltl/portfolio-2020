@@ -255,8 +255,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">January 2020</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    A simple weather app that fetches and displays the local timezone, weather, and temperature of a city using the api from <i>OpenWeatherMap</i>. Querying letters in
-                                    the search box will return a list of available cities.
+                                    A simple weather app that fetches and displays the local timezone, weather, and temperature of a city using the api from{' '}
+                                    <span className="is-italic">OpenWeatherMap</span>. Querying letters in the search box will return a list of available cities.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">
@@ -300,8 +300,8 @@ const IndexPage = () => {
                                     <p className="projects__item__head__date">September 2018</p>
                                 </div>
                                 <p className="projects__item__body">
-                                    My first website project created — this challenge is taken from freeCodeCamp's <i>Responsive Web Design - Build a Product Landing Page</i> project. I redesigned the
-                                    landing page of Rolls-Royce Wraith.
+                                    My first website project created — this challenge is taken from freeCodeCamp's{' '}
+                                    <span className="is-italic">Responsive Web Design - Build a Product Landing Page</span> project. I redesigned the landing page of Rolls-Royce Wraith.
                                 </p>
                                 <div className="projects__item__foot">
                                     <ul className="projects__item__foot__tools">
