@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 import { SiGithub } from 'react-icons/si';
 import { FiExternalLink } from 'react-icons/fi';
 
-import '../styles/projects.scss';
+import '../styles/projects-page.scss';
 
 const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
