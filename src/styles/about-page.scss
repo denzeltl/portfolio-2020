@@ -1,0 +1,46 @@
+@import 'variables';
+
+.about-page {
+    padding: 3rem 0;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__details {
+        width: 750px;
+    }
+
+    &__text {
+        font-size: $text-s;
+        margin-bottom: 1.5rem;
+    }
+
+    &__image {
+        width: 350px;
+    }
+}
+
+/* Media Queries */
+@media screen and (min-width: 2000px) {
+}
+
+@media screen and (max-width: 1300px) {
+}
+
+@media screen and (max-width: 1120px) {
+}
+
+@media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 815px) {
+}
+
+@media screen and (max-width: 680px) {
+}
+
+@media screen and (max-width: 600px) {
+}
