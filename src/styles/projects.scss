@@ -104,7 +104,7 @@
         &__head {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             margin-bottom: 1rem;
 
             &__title {
@@ -114,12 +114,13 @@
             &__date {
                 color: $gray-text;
                 font-size: $text-xs;
+                text-align: right;
             }
         }
 
         &__body {
             font-size: $text-s;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         &__foot {
@@ -130,6 +131,8 @@
             &__tools {
                 li {
                     display: inline-block;
+                    margin-top: 0.25rem;
+                    margin-bottom: 0.25rem;
                     margin-right: 0.5rem;
                     font-size: $text-xs;
                     border: 2px solid $gray-text;
@@ -167,23 +170,87 @@
 }
 
 /* Media Queries */
-@media screen and (min-width: 2000px) {
-}
-
 @media screen and (max-width: 1300px) {
-}
+    .projects-page {
+        &__item {
+            &__head {
+                &__title {
+                    max-width: 15rem;
+                }
+            }
 
-@media screen and (max-width: 1120px) {
-}
-
-@media screen and (max-width: 900px) {
+            &__foot {
+                &__links {
+                    width: 5rem;
+                    text-align: right;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 815px) {
-}
+    .projects-page {
+        padding: 3rem 0;
 
-@media screen and (max-width: 680px) {
+        &__list {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__item {
+            margin-bottom: 3rem;
+            max-width: 520px;
+
+            &:nth-child(odd) {
+                margin-bottom: 3rem;
+            }
+
+            &:nth-child(even) {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &__head {
+                &__title {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
+    .projects-page {
+        &__item {
+            &__image {
+                a {
+                    .text {
+                        p {
+                            font-size: $text-m-sp;
+                        }
+                    }
+                }
+            }
+
+            &__head {
+                &__title {
+                    font-size: $text-m-sp;
+                }
+
+                &__date {
+                    padding-left: 1rem;
+                }
+            }
+
+            &__foot {
+                &__links {
+                    width: 7rem;
+                }
+            }
+        }
+    }
 }

@@ -45,6 +45,10 @@ p {
     line-height: 1.5;
 }
 
+.is-pc {
+    display: block;
+}
+
 .is-sp {
     display: none;
 }
@@ -132,7 +136,7 @@ p {
 
     &__text {
         font-size: $text-s;
-        max-width: 45rem;
+        max-width: 46rem;
         margin: 0 auto;
 
         a {
@@ -195,6 +199,12 @@ p {
     .container {
         margin: 0 2rem;
     }
+
+    .headline {
+        &__text {
+            max-width: 34rem;
+        }
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -204,6 +214,10 @@ p {
 }
 
 @media screen and (max-width: 600px) {
+    .is-pc {
+        display: none;
+    }
+
     .is-sp {
         display: block;
     }

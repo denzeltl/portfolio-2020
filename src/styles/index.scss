@@ -229,7 +229,7 @@
         &__head {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             margin-bottom: 1rem;
 
             &__title {
@@ -573,6 +573,7 @@
 
         &__text {
             font-size: $text-m-sp;
+            max-width: 27rem;
         }
     }
 

@@ -263,7 +263,12 @@ const ProjectsPage = () => {
                                         </p>
                                     </div>
                                     <div className="image-container">
-                                        <Img fluid={data.projectMovie.childImageSharp.fluid} style={{ maxHeight: '21rem' }} alt="Screenshot of Movie Project" />
+                                        <Img
+                                            fluid={data.projectMovie.childImageSharp.fluid}
+                                            style={{ maxHeight: '21rem' }}
+                                            imgStyle={{ objectPosition: 'center top' }}
+                                            alt="Screenshot of Movie Project"
+                                        />
                                     </div>
                                 </a>
                             </div>

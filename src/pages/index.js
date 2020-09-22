@@ -84,7 +84,7 @@ const IndexPage = () => {
                     <h2 className="hero__title">Hi! I’m Denzel.</h2>
                     <p className="hero__text">
                         I’m a Web Developer based in Quezon City, Philippines.
-                        <br />I enjoy creating well-designed, responsive, and accessible websites.
+                        <br className="is-pc" /> I enjoy creating well-designed, responsive, and accessible websites.
                     </p>
                     <Link to="/contact" className="button hero__button">
                         Contact Me <BsArrowRight />
