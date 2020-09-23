@@ -1,25 +1,35 @@
 @import 'variables';
 
 .about-page {
-    padding: 3rem 0;
+    &__background {
+        padding: 3rem 0;
+        background: $light-text;
 
-    &__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        &__container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        &__text {
+            width: 760px;
+        }
+
+        &__p {
+            font-size: $text-s;
+            margin-bottom: 1rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__image {
+            width: 375px;
+        }
     }
 
-    &__details {
-        width: 750px;
-    }
-
-    &__text {
-        font-size: $text-s;
-        margin-bottom: 1.5rem;
-    }
-
-    &__image {
-        width: 350px;
+    &__experience {
     }
 }
 
