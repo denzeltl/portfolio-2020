@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+
+import { HiChevronRight } from 'react-icons/hi';
 
 import '../styles/about-page.scss';
 
@@ -19,6 +21,48 @@ const AboutPage = () => {
             }
         }
     `);
+    const jobs = [
+        {
+            slug: 'LH & C',
+            position: 'Web Developer',
+            company: 'LH & Creatives',
+            date: 'October 2019 - Present',
+            duties: [
+                'Build both interactive and responsive websites based from the provided design material',
+                'Create and use custom data from CMS like Wordpress for dynamic content updating',
+                "Revise finished projects to meet client's expectations",
+                'Provide assistance to other team members by checking their work and making sure that all instructions are followed',
+                'Ensure work done is of high quality by adhering to company coding standards',
+            ],
+        },
+        {
+            slug: 'BOS',
+            position: 'Processing Associate',
+            company: 'Boutique Outsource Solutions',
+            date: 'November 2017 – August 2019',
+            duties: [
+                'Provide a high level of accurate and efficient data entry',
+                'Process, translate, and input corresponding data into third party systems',
+                'Merge and prepare document packs that are to be sent and signed by the clients',
+                'Meet daily service agreement goals in production and turnaround times',
+                'Maintain a high level of confidentiality and discretion over sensitive documents',
+            ],
+        },
+        {
+            slug: "Shoti's",
+            position: 'Owner / Manager',
+            company: 'Shoti’s Dimsum House',
+            date: 'October 2015 – July 2017',
+            duties: [
+                'Handle and manage food stall',
+                'Analyze sales forecasts to develop specific objectives',
+                'Plan and implement sales strategies',
+                'Foster strong working relationship with employees',
+                'Efficiently cater customers’ needs and wants',
+            ],
+        },
+    ];
+    const [activeTab, setActiveTab] = useState(0);
     return (
         <Layout>
             <SEO title="About" />
@@ -57,62 +101,35 @@ const AboutPage = () => {
                     <h3 className="title title__center">Experience</h3>
                     <div className="about-page__experience__container">
                         <ul className="about-page__experience__tabs">
-                            <li className="about-page__experience__tab">
-                                <button className="about-page__experience__button">
-                                    <p>LH & C</p>
-                                </button>
-                            </li>
-                            <li className="about-page__experience__tab">
-                                <button className="about-page__experience__button">
-                                    <p>BOS</p>
-                                </button>
-                            </li>
-                            <li className="about-page__experience__tab">
-                                <button className="about-page__experience__button">
-                                    <p>Shoti's</p>
-                                </button>
-                            </li>
+                            {jobs.map((job, index) => {
+                                return (
+                                    <li key={index} className={`about-page__experience__tab ${activeTab === index ? 'is-active' : ''}`}>
+                                        <button onClick={() => setActiveTab(index)} className="about-page__experience__button">
+                                            <p>{job.slug}</p>
+                                        </button>
+                                    </li>
+                                );
+                            })}
                         </ul>
-                        <div className="about-page__experience__work">
-                            <h4>Web Developer</h4>
-                            <h5>
-                                at <span>LH & Creatives</span>
-                            </h5>
-                            <p>August 2019 - Present</p>
-                            <ul>
-                                <li>Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lore</li>
-                                <li>Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lore</li>
-                                <li>Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lore</li>
-                                <li>Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lorem ipsum asdafsadasf Lore</li>
-                            </ul>
-                        </div>
-                        <div className="about-page__experience__work">
-                            <h4>Processing Associate</h4>
-                            <h5>
-                                at <span>Boutique Outsource Solutions</span>
-                            </h5>
-                            <p>November 2017 – August 2019</p>
-                            <ul>
-                                <li>Provide a high level of accurate and efficient data entry to assist the needs of the counterparts located in Queensland, Australia</li>
-                                <li>Process, translate, and input corresponding data into 3rd party systems</li>
-                                <li>Merge and prepare document packs that are to be sent and signed by the clients</li>
-                                <li>Meet daily service agreement goals in production and turnaround times</li>
-                            </ul>
-                        </div>
-                        <div className="about-page__experience__work">
-                            <h4>Owner / Manager</h4>
-                            <h5>
-                                at <span>Shoti’s Dimsum House</span>
-                            </h5>
-                            <p>October 2015 – July 2017</p>
-                            <ul>
-                                <li>Handle and manage food stall</li>
-                                <li>Analyze sales forecasts to develop specific objectives</li>
-                                <li>Plan and implement sales strategies</li>
-                                <li>Foster strong working relationship with employees</li>
-                                <li>Efficiently cater customers’ needs and wants</li>
-                            </ul>
-                        </div>
+                        {jobs.map((job, index) => {
+                            return (
+                                <div key={index} className={`about-page__experience__work ${activeTab === index ? 'is-active' : ''}`}>
+                                    <h4 className="about-page__experience__position">{job.position}</h4>
+                                    <h5 className="about-page__experience__company">
+                                        at <span>{job.company}</span>
+                                    </h5>
+                                    <p className="about-page__experience__date">{job.date}</p>
+                                    <ul className="about-page__experience__duties">
+                                        {job.duties.map((duty, index) => (
+                                            <li className="about-page__experience__duty" key={index}>
+                                                <HiChevronRight />
+                                                <p>{duty}</p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

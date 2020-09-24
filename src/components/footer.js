@@ -32,7 +32,7 @@ const Footer = () => (
                     </a>
                 </ul>
             </div>
-            <p className="footer__copyright">© 2020 Denzel Tiam-Lee</p>
+            <p className="footer__copyright">&copy; 2020 Denzel Tiam-Lee</p>
         </div>
     </footer>
 );

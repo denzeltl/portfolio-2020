@@ -30,6 +30,128 @@
     }
 
     &__experience {
+        padding-bottom: 3rem;
+
+        &__container {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        &__button {
+            font-size: $text-s;
+            color: $gray-text;
+            letter-spacing: 1px;
+            display: block;
+            width: 100%;
+            padding: 0.1rem 1rem;
+            text-align: left;
+            transition: color 0.3s;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 3px;
+                height: 100%;
+                background: $secondary-color;
+                content: '';
+                opacity: 0;
+                transform: translateX(5px);
+                transition: opacity 0.3s, transform 0.3s;
+            }
+
+            &:hover {
+                color: $secondary-color;
+
+                &::after {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        &__tab {
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.is-active {
+                button {
+                    color: $secondary-color;
+                    font-weight: 700;
+
+                    &::after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 3px;
+                        height: 100%;
+                        background: $secondary-color;
+                        content: '';
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &__work {
+            display: none;
+            flex: 1;
+            margin-left: 1rem;
+            margin-top: 0.1rem;
+
+            &.is-active {
+                display: block;
+            }
+        }
+
+        &__position {
+            font-size: $text-m;
+        }
+
+        &__company {
+            font-size: $text-s;
+            font-weight: 400;
+            line-height: 1.5;
+
+            span {
+                color: $secondary-color;
+                font-weight: 700;
+            }
+        }
+
+        &__date {
+            font-size: $text-s;
+            color: $gray-text;
+            margin-bottom: 1rem;
+        }
+
+        &__duty {
+            display: flex;
+            margin-bottom: 0.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            svg {
+                font-size: 1rem;
+                margin-right: 0.5rem;
+                color: $secondary-color;
+                margin-top: 0.1rem;
+            }
+
+            p {
+                flex: 1;
+                font-size: $text-xs;
+            }
+        }
     }
 }
 
