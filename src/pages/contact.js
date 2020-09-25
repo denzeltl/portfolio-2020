@@ -1,19 +1,32 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Footer from '../components/footer';
+
+import '../styles/contact-page.scss';
 
 const ContactPage = () => {
     return (
-        <Layout>
-            <SEO title="Contact" />
-            <section className="page-banner">
-                <h2>Contact me</h2>
-                <p>Welcome to page contact</p>
-                <Link to="/">Go back to the homepage</Link>
-            </section>
-        </Layout>
+        <>
+            <Layout>
+                <SEO title="Contact" />
+                <section className="headline">
+                    <div className="container">
+                        <h2 className="title title__center">Let's Connect!</h2>
+                        <p className="headline__text">
+                            Feel free to leave me a message, I will respond as soon as I can.
+                            <br /> I look forward to hearing from you!
+                        </p>
+                    </div>
+                </section>
+                <section className="contact-page">
+                    <h3>Contact me</h3>
+                    <p>Welcome to page contact</p>
+                </section>
+            </Layout>
+            <Footer title="Contact" />
+        </>
     );
 };
 

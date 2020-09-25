@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import Header from './header';
-import Footer from './footer';
 import '../styles/layout.scss';
 
 const Layout = ({ children }) => {
@@ -24,7 +23,6 @@ const Layout = ({ children }) => {
             </Helmet>
             <Header siteTitle={data.site.siteMetadata.title} />
             <main className="main">{children}</main>
-            <Footer />
         </>
     );
 };

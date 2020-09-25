@@ -46,6 +46,10 @@
         font-size: $text-xs;
         text-align: center;
     }
+
+    &__via {
+        margin-bottom: 1rem;
+    }
 }
 
 /* Media Queries */
