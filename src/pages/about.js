@@ -70,7 +70,7 @@ const AboutPage = () => {
                 <div className="container">
                     <h2 className="title title__center">About Me</h2>
                     <p className="headline__text">
-                        Hello! I’m Denzel Tiam-Lee, a web developer based in Quezon City, Philippines. I enjoy creating well-designed, responsive, and accessible websites by writing clean and
+                        Hello! I’m Denzel Tiam-Lee, a web developer based in Quezon City, Philippines. I enjoy creating well-designed, responsive, and accessible websites by means of writing clean and
                         maintenable code.
                     </p>
                 </div>
@@ -80,15 +80,15 @@ const AboutPage = () => {
                     <div className="about-page__background__text">
                         <h3 className="title">Background</h3>
                         <p className="about-page__background__p">
-                            I went to college at University of Santo Tomas and graduated with a degree in BS Entrepreneurship. Shortly after graduating, I got an offer in a BPO company as a processing
-                            associate wherein we process loan mortgages on a daily basis. I decided to shift my career because I’ve always been curious with how the web works. My curiosity and desire
-                            to take on challenges motivated me to study web development.
+                            I went to college at University of Santo Tomas and graduated with a degree in BS Entrepreneurship. Shortly after graduating, I got hired as a processing associate in a BPO
+                            company. Eventually, I have decided to shift careers because I’ve always been curious with how the web works. My curiosity and desire to take on challenges motivated me to
+                            study web development.
                         </p>
                         <p className="about-page__background__p">
-                            I started teaching myself web development on July 2018 and has continuously been learning since then. The main resources I use are{' '}
-                            <span className="is-italic">YouTube</span> videos, online courses from <span className="is-italic">Udemy</span> and <span className="is-italic">CodeCademy</span>, and
-                            coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and <span className="is-italic">The Odin Project</span>. On October 2019, I landed a projessional
-                            job as a web developer.
+                            I started teaching myself on July 2018 and has continuously been learning since then. The main resources I use for studying are{' '}
+                            <span className="is-italic">Stack Overflow</span>, <span className="is-italic">YouTube</span> videos, online courses from <span className="is-italic">Udemy</span> and{' '}
+                            <span className="is-italic">CodeCademy</span>, and coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and{' '}
+                            <span className="is-italic">The Odin Project</span>. On October 2019, I've landed my first projessional job as a web developer.
                         </p>
                     </div>
                     <div className="about-page__background__image">
