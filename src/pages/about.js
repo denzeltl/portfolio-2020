@@ -87,7 +87,7 @@ const AboutPage = () => {
                         <p className="about-page__background__p">
                             I started teaching myself on July 2018 and has continuously been learning since then. The main resources I use for studying are{' '}
                             <span className="is-italic">Stack Overflow</span>, <span className="is-italic">YouTube</span> videos, online courses from <span className="is-italic">Udemy</span> and{' '}
-                            <span className="is-italic">CodeCademy</span>, and coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and{' '}
+                            <span className="is-italic">Codecademy</span>, and coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and{' '}
                             <span className="is-italic">The Odin Project</span>. On October 2019, I've landed my first projessional job as a web developer.
                         </p>
                     </div>
