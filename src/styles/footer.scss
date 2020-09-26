@@ -56,59 +56,13 @@
 @media screen and (max-width: 1300px) {
     .footer {
         padding: 3rem 0 1.5rem;
-
-        &__container {
-            text-align: left;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 3rem;
-        }
-
-        &__button {
-            margin-bottom: 0;
-        }
-
-        &__link {
-            margin-right: 1.8rem;
-        }
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .footer {
-        &__link {
-            margin-right: 1.4rem;
-        }
-    }
-}
-
-@media screen and (max-width: 680px) {
-    .footer {
-        &__link {
-            margin-right: 1rem;
-        }
     }
 }
 
 @media screen and (max-width: 600px) {
     .footer {
-        &__container {
-            display: block;
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
         &__title {
             font-size: $text-l-sp;
-        }
-
-        &__button {
-            margin-bottom: 1.6rem;
-        }
-
-        &__link {
-            margin-right: 1.5rem;
         }
     }
 }

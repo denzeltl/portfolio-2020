@@ -1,23 +1,83 @@
 @import 'variables';
 
 .contact-page {
+    background: $primary-color;
+
+    &__form {
+        max-width: 750px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__wrapper {
+        width: 100%;
+        position: relative;
+        margin-bottom: 3rem;
+    }
+
+    &__input {
+        width: 100%;
+        display: inline-block;
+        font-size: $text-s;
+        padding: 0.5rem 1rem;
+        color: $dark-text;
+        background-color: $light-text;
+        border: 2px solid $light-text;
+        outline: none;
+        transition: border 0.3s;
+
+        &.focus-visible {
+            border: 2px solid $secondary-color;
+
+            & ~ .contact-page__label {
+                top: -1.5rem;
+                color: $secondary-color;
+                font-size: $text-xs;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        display: inline-block;
+        color: $dark-text;
+        top: 0.5rem;
+        left: 1rem;
+        font-size: $text-s;
+        transition: top 0.3s, color 0.3s, font-size 0.3s, font-weight 0.3s;
+        pointer-events: none;
+
+        &.has-value {
+            top: -1.5rem;
+            color: $light-text;
+            font-size: $text-xs;
+            font-weight: 700;
+        }
+    }
 }
 
 /* Media Queries */
-@media screen and (max-width: 1300px) {
-}
-
 @media screen and (max-width: 1120px) {
+    .contact-page {
+        &__form {
+            max-width: 650px;
+        }
+    }
 }
 
-@media screen and (max-width: 980px) {
-}
-
-@media screen and (max-width: 815px) {
+@media screen and (max-width: 900px) {
+    .contact-page {
+        &__form {
+            max-width: 600px;
+        }
+    }
 }
 
 @media screen and (max-width: 680px) {
-}
-
-@media screen and (max-width: 600px) {
+    .contact-page {
+        &__form {
+            max-width: 500px;
+        }
+    }
 }
