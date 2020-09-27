@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -47,6 +49,48 @@ const IndexPage = () => {
             }
         }
     `);
+    const aboutTextRefAnimation = useAnimation();
+    const aboutImageRefAnimation = useAnimation();
+    const skillsRefAnimation = useAnimation();
+    const [aboutTextRef, aboutTextRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [aboutImageRef, aboutImageRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [skillsRef, skillsRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const scrollVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    useEffect(() => {
+        if (aboutTextRefView) {
+            aboutTextRefAnimation.start('visible');
+        }
+    }, [aboutTextRefAnimation, aboutTextRefView]);
+    useEffect(() => {
+        if (aboutImageRefView) {
+            aboutImageRefAnimation.start('visible');
+        }
+    }, [aboutImageRefAnimation, aboutImageRefView]);
+    useEffect(() => {
+        if (skillsRefView) {
+            skillsRefAnimation.start('visible');
+        }
+    }, [skillsRefAnimation, skillsRefView]);
     return (
         <>
             <Layout>
@@ -95,7 +139,7 @@ const IndexPage = () => {
                 </section>
                 <section className="about">
                     <div className="container about__container">
-                        <div className="about__details">
+                        <motion.div className="about__details" ref={aboutTextRef} animate={aboutTextRefAnimation} initial="hidden" variants={scrollVariants}>
                             <h3 className="title about__title">About Me</h3>
                             <p className="about__text">
                                 I'm passionate about the things that I do. I continuously seek knowledge from different challenges and experiences. During my free time, I like to learn to keep myself
@@ -104,15 +148,17 @@ const IndexPage = () => {
                             <Link to="/about" className="button about__button">
                                 My Story <BsArrowRight />
                             </Link>
-                        </div>
-                        <div className="about__image">
+                        </motion.div>
+                        <motion.div className="about__image" ref={aboutImageRef} animate={aboutImageRefAnimation} initial="hidden" variants={scrollVariants}>
                             <Img fluid={data.headDp.childImageSharp.fluid} alt="Head Display Picture" />
-                        </div>
+                        </motion.div>
                     </div>
                 </section>
                 <section className="skills">
                     <div className="container">
-                        <h3 className="title title__center skills__title">Skills</h3>
+                        <motion.h3 className="title title__center skills__title" ref={skillsRef} animate={skillsRefAnimation} initial="hidden" variants={scrollVariants}>
+                            Skills
+                        </motion.h3>
                         <div className="skills__container">
                             <p className="skills__container__title">These are the main languages, frameworks / libraries, and tools that I use / have used.</p>
                             <div className="skills__container__content">
