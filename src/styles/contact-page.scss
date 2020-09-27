@@ -67,6 +67,10 @@
     &__success {
         text-align: center;
 
+        &__headline {
+            padding: 9rem 0 3rem;
+        }
+
         &__title {
             font-size: $text-l;
             color: $secondary-color;

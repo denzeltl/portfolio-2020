@@ -49,7 +49,7 @@ const ContactPage = () => {
             body: encode({ 'form-name': 'contact', ...formState }),
         })
             .then(() => navigate(form.getAttribute('action')))
-            .catch((error) => alert(error));
+            .catch(() => alert('Sorry, an error has occured. Please try resubmitting your form.'));
 
         e.preventDefault();
     };

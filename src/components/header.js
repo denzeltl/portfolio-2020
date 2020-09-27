@@ -89,7 +89,7 @@ const Header = () => {
                             onClick={() => {
                                 setToggledButton(false);
                             }}
-                            href="#"
+                            href="mailto:denzeltlee@gmail.com"
                             className="header__link"
                         >
                             <IoIosMail className="header__icon" />
@@ -98,7 +98,8 @@ const Header = () => {
                             onClick={() => {
                                 setToggledButton(false);
                             }}
-                            href="#"
+                            href="https://www.linkedin.com/in/denzel-tiam-lee"
+                            rel="noopener noreferrer"
                             target="_blank"
                             className="header__link"
                         >
@@ -108,7 +109,8 @@ const Header = () => {
                             onClick={() => {
                                 setToggledButton(false);
                             }}
-                            href="#"
+                            href="https://github.com/denzeltl?tab=repositories"
+                            rel="noopener noreferrer"
                             target="_blank"
                             className="header__link"
                         >

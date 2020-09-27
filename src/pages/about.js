@@ -73,7 +73,7 @@ const AboutPage = () => {
                         <h2 className="title title__center">About Me</h2>
                         <p className="headline__text">
                             Hello! I’m Denzel Tiam-Lee, a web developer based in Quezon City, Philippines. I enjoy creating well-designed, responsive, and accessible websites by means of writing clean
-                            and maintenable code.
+                            and maintainable code.
                         </p>
                     </div>
                 </section>

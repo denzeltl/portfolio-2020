@@ -28,13 +28,13 @@ const Footer = ({ title }) => {
                         )}
                     </div>
                     <ul className="footer__links">
-                        <a href="#" className="footer__link">
+                        <a href="mailto:denzeltlee@gmail.com" className="footer__link">
                             <IoIosMail className="footer__icon" />
                         </a>
-                        <a href="#" target="_blank" className="footer__link">
+                        <a rel="noopener noreferrer" href="https://www.linkedin.com/in/denzel-tiam-lee" target="_blank" className="footer__link">
                             <IoLogoLinkedin className="footer__icon" />
                         </a>
-                        <a href="#" target="_blank" className="footer__link">
+                        <a rel="noopener noreferrer" href="https://github.com/denzeltl?tab=repositories" target="_blank" className="footer__link">
                             <IoLogoGithub className="footer__icon" />
                         </a>
                     </ul>

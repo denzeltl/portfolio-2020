@@ -14,7 +14,7 @@ const SuccessPage = () => {
         <>
             <Layout>
                 <SEO title="Contact" />
-                <section className="headline">
+                <section className="headline contact-page__success__headline">
                     <div className="container">
                         <h2 className="title title__center">Thank You!</h2>
                     </div>
