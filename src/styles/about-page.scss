@@ -1,9 +1,10 @@
 @import 'variables';
 
 .about-page {
+    background: $light-text;
+
     &__background {
         padding: 3rem 0;
-        background: $light-text;
 
         &__container {
             display: flex;
@@ -257,7 +258,7 @@
 
         &__experience {
             &__container {
-                max-width: 100%;
+                max-width: 500px;
                 flex-direction: column;
             }
 
@@ -317,6 +318,10 @@
 @media screen and (max-width: 600px) {
     .about-page {
         &__experience {
+            &__container {
+                max-width: 450px;
+            }
+
             &__button {
                 font-size: $text-m-sp;
                 padding: 0.3rem 0.5rem;

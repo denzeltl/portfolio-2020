@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { navigate } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -41,12 +42,13 @@ const ContactPage = () => {
         });
     };
     const handleSubmit = (e) => {
+        const form = e.target;
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: encode({ 'form-name': 'contact', ...formState }),
         })
-            .then(() => alert('Success!'))
+            .then(() => navigate(form.getAttribute('action')))
             .catch((error) => alert(error));
 
         e.preventDefault();
@@ -66,7 +68,7 @@ const ContactPage = () => {
                 </section>
                 <section className="contact-page">
                     <div className="container">
-                        <form className="contact-page__form" onSubmit={handleSubmit} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <form className="contact-page__form" onSubmit={handleSubmit} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/success">
                             <input type="hidden" name="form-name" value="contact" />
                             <div class="contact-page__wrapper">
                                 <input

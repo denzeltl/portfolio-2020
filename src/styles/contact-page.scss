@@ -63,6 +63,28 @@
             transform: translateY(0);
         }
     }
+
+    &__success {
+        text-align: center;
+
+        &__title {
+            font-size: $text-l;
+            color: $secondary-color;
+            margin-bottom: 1rem;
+        }
+
+        &__icon {
+            font-size: 4rem;
+            color: $secondary-color;
+            margin-bottom: 2rem;
+        }
+
+        &__message {
+            font-size: $text-s;
+            color: $light-text;
+            margin-bottom: 3rem;
+        }
+    }
 }
 
 /* Media Queries */
