@@ -12,6 +12,11 @@ const ContactPage = () => {
         email: '',
         message: '',
     });
+    const [isFocused, setIsFocused] = useState({
+        name: false,
+        email: false,
+        message: false,
+    });
     const encode = (data) => {
         return Object.keys(data)
             .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -21,6 +26,18 @@ const ContactPage = () => {
         setFormState({
             ...formState,
             [e.target.name]: e.target.value,
+        });
+    };
+    const handleFocus = (e) => {
+        setIsFocused({
+            ...isFocused,
+            [e.target.name]: true,
+        });
+    };
+    const handleBlur = (e) => {
+        setIsFocused({
+            ...isFocused,
+            [e.target.name]: false,
         });
     };
     const handleSubmit = (e) => {
@@ -52,20 +69,47 @@ const ContactPage = () => {
                         <form className="contact-page__form" onSubmit={handleSubmit} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                             <input type="hidden" name="form-name" value="contact" />
                             <div class="contact-page__wrapper">
-                                <input className="contact-page__input" required type="text" name="name" onChange={handleChange} value={formState.name} />
+                                <input
+                                    className={`contact-page__input ${isFocused.name ? 'is-focused' : ''}`}
+                                    required
+                                    type="text"
+                                    name="name"
+                                    onChange={handleChange}
+                                    value={formState.name}
+                                    onFocus={handleFocus}
+                                    onBlur={handleBlur}
+                                />
                                 <label className={`contact-page__label ${formState.name ? 'has-value' : ''}`} htmlFor="name">
                                     Name
                                 </label>
                             </div>
                             <div class="contact-page__wrapper">
-                                <input className="contact-page__input" required type="email" name="email" onChange={handleChange} value={formState.email} />
+                                <input
+                                    className={`contact-page__input ${isFocused.email ? 'is-focused' : ''}`}
+                                    required
+                                    type="email"
+                                    name="email"
+                                    onChange={handleChange}
+                                    value={formState.email}
+                                    onFocus={handleFocus}
+                                    onBlur={handleBlur}
+                                />
                                 <label className={`contact-page__label ${formState.email ? 'has-value' : ''}`} htmlFor="email">
                                     Email
                                 </label>
                             </div>
                             <div class="contact-page__wrapper">
-                                <textarea className="contact-page__input" required name="message" rows="4" onChange={handleChange} value={formState.message} />
-                                <label className={`contact-page__label ${formState.message ? 'has-value' : ''}`} htmlFor="message">
+                                <textarea
+                                    className={`contact-page__input ${isFocused.message ? 'is-focused' : ''}`}
+                                    required
+                                    name="message"
+                                    rows="4"
+                                    onChange={handleChange}
+                                    value={formState.message}
+                                    onFocus={handleFocus}
+                                    onBlur={handleBlur}
+                                />
+                                <label className={`contact-page__label contact-page__label--message ${formState.message ? 'has-value' : ''}`} htmlFor="message">
                                     Message
                                 </label>
                             </div>
