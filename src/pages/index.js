@@ -148,7 +148,7 @@ const IndexPage = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1, when: 'beforeChildren', staggerChildren: 1 },
+            transition: { duration: 1 },
             ease: [0.6, 0.05, -0.01, 0.9],
         },
         hidden: {
@@ -270,7 +270,7 @@ const IndexPage = () => {
                                 visible: {
                                     opacity: 1,
                                     y: 0,
-                                    transition: { duration: 1 },
+                                    transition: { duration: 1, delay: 0.6 },
                                     ease: [0.6, 0.05, -0.01, 0.9],
                                 },
                                 hidden: {
@@ -282,7 +282,21 @@ const IndexPage = () => {
                             I’m a Web Developer based in Quezon City, Philippines.
                             <br className="is-pc" /> I enjoy creating well-designed, responsive, and accessible websites.
                         </motion.p>
-                        <motion.div className="is-inline-block" variants={buttonVariants}>
+                        <motion.div
+                            className="is-inline-block"
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: { delay: 1.5 },
+                                    ease: [0.6, 0.05, -0.01, 0.9],
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    x: -100,
+                                },
+                            }}
+                        >
                             <Link to="/contact" className="button hero__button">
                                 Contact Me <BsArrowRight />
                             </Link>

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -64,23 +66,91 @@ const AboutPage = () => {
         },
     ];
     const [activeTab, setActiveTab] = useState(0);
+    const backgroundImageRefAnimation = useAnimation();
+    const backgroundTextRefAnimation = useAnimation();
+    const experienceRefAnimation = useAnimation();
+    const [backgroundImageRef, backgroundImageRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [backgroundTextRef, backgroundTextRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [experienceRef, experienceRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const headlineVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    const scrollVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    useEffect(() => {
+        if (backgroundImageRefView) {
+            backgroundImageRefAnimation.start('visible');
+        }
+    }, [backgroundImageRefAnimation, backgroundImageRefView]);
+    useEffect(() => {
+        if (backgroundTextRefView) {
+            backgroundTextRefAnimation.start('visible');
+        }
+    }, [backgroundTextRefAnimation, backgroundTextRefView]);
+    useEffect(() => {
+        if (experienceRefView) {
+            experienceRefAnimation.start('visible');
+        }
+    }, [experienceRefAnimation, experienceRefView]);
     return (
         <>
             <Layout>
                 <SEO title="About" />
                 <section className="headline">
-                    <div className="container">
+                    <motion.div className="container" animate="visible" initial="hidden" variants={headlineVariants}>
                         <h2 className="title title__center">About Me</h2>
-                        <p className="headline__text">
+                        <motion.p
+                            className="headline__text"
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 1, delay: 0.4 },
+                                    ease: [0.6, 0.05, -0.01, 0.9],
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    y: 72,
+                                },
+                            }}
+                        >
                             Hello! I’m Denzel Tiam-Lee, a web developer based in Quezon City, Philippines. I enjoy creating well-designed, responsive, and accessible websites by means of writing clean
                             and maintainable code.
-                        </p>
-                    </div>
+                        </motion.p>
+                    </motion.div>
                 </section>
                 <div className="about-page">
                     <section className="about-page__background">
                         <div className="container about-page__background__container">
-                            <div className="about-page__background__text">
+                            <motion.div className="about-page__background__text" ref={backgroundTextRef} animate={backgroundTextRefAnimation} initial="hidden" variants={scrollVariants}>
                                 <h3 className="title">Background</h3>
                                 <p className="about-page__background__p">
                                     I went to college at University of Santo Tomas and graduated with a degree in BS Entrepreneurship. Shortly after graduating, I got hired as a processing associate
@@ -93,14 +163,14 @@ const AboutPage = () => {
                                     and <span className="is-italic">Codecademy</span>, and coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and{' '}
                                     <span className="is-italic">The Odin Project</span>. On October 2019, I've landed my first projessional job as a web developer.
                                 </p>
-                            </div>
-                            <div className="about-page__background__image">
+                            </motion.div>
+                            <motion.div className="about-page__background__image" ref={backgroundImageRef} animate={backgroundImageRefAnimation} initial="hidden" variants={scrollVariants}>
                                 <Img fluid={data.bodyDp.childImageSharp.fluid} alt="Head Display Picture" />
-                            </div>
+                            </motion.div>
                         </div>
                     </section>
                     <section className="about-page__experience">
-                        <div className="container">
+                        <motion.div className="container" ref={experienceRef} animate={experienceRefAnimation} initial="hidden" variants={scrollVariants}>
                             <h3 className="title title__center">Experience</h3>
                             <div className="about-page__experience__container">
                                 <ul className="about-page__experience__tabs">
@@ -134,7 +204,7 @@ const AboutPage = () => {
                                     );
                                 })}
                             </div>
-                        </div>
+                        </motion.div>
                     </section>
                 </div>
             </Layout>

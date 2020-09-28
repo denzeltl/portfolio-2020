@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { navigate } from 'gatsby';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -53,22 +55,81 @@ const ContactPage = () => {
 
         e.preventDefault();
     };
+    const formRefAnimation = useAnimation();
+    const [formRef, formRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    useEffect(() => {
+        if (formRefView) {
+            formRefAnimation.start('visible');
+        }
+    }, [formRefAnimation, formRefView]);
+    const headlineVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
     return (
         <>
             <Layout>
                 <SEO title="Contact" />
                 <section className="headline">
-                    <div className="container">
+                    <motion.div className="container" animate="visible" initial="hidden" variants={headlineVariants}>
                         <h2 className="title title__center">Let's Connect!</h2>
-                        <p className="headline__text">
+                        <motion.p
+                            className="headline__text"
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 1, delay: 0.4 },
+                                    ease: [0.6, 0.05, -0.01, 0.9],
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    y: 72,
+                                },
+                            }}
+                        >
                             Feel free to leave a message, I will respond as soon as possible.
                             <br /> I look forward to hearing from you!
-                        </p>
-                    </div>
+                        </motion.p>
+                    </motion.div>
                 </section>
                 <section className="contact-page">
                     <div className="container">
-                        <form className="contact-page__form" onSubmit={handleSubmit} name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/success">
+                        <motion.form
+                            className="contact-page__form"
+                            onSubmit={handleSubmit}
+                            name="contact"
+                            method="post"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                            action="/contact/success"
+                            ref={formRef}
+                            animate={formRefAnimation}
+                            initial="hidden"
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 0.6, when: 'beforeChildren' },
+                                    ease: [0.6, 0.05, -0.01, 0.9],
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    y: 72,
+                                },
+                            }}
+                        >
                             <input type="hidden" name="form-name" value="contact" />
                             <div class="contact-page__wrapper">
                                 <input
@@ -115,10 +176,24 @@ const ContactPage = () => {
                                     Message
                                 </label>
                             </div>
-                            <button type="submit" className="contact-page__button button">
+                            <motion.button
+                                type="submit"
+                                className="contact-page__button button"
+                                variants={{
+                                    visible: {
+                                        opacity: 1,
+                                        x: 0,
+                                        ease: [0.6, 0.05, -0.01, 0.9],
+                                    },
+                                    hidden: {
+                                        opacity: 0,
+                                        x: -100,
+                                    },
+                                }}
+                            >
                                 Send Message
-                            </button>
-                        </form>
+                            </motion.button>
+                        </motion.form>
                     </div>
                 </section>
             </Layout>

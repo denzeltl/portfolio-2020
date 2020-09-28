@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { useInView } from 'react-intersection-observer';
+import { useAnimation, motion } from 'framer-motion';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -100,27 +102,196 @@ const ProjectsPage = () => {
             }
         }
     `);
+    const projectOneRefAnimation = useAnimation();
+    const projectTwoRefAnimation = useAnimation();
+    const projectThreeRefAnimation = useAnimation();
+    const projectFourRefAnimation = useAnimation();
+    const projectFiveRefAnimation = useAnimation();
+    const projectSixRefAnimation = useAnimation();
+    const projectSevenRefAnimation = useAnimation();
+    const projectEightRefAnimation = useAnimation();
+    const projectNineRefAnimation = useAnimation();
+    const projectTenRefAnimation = useAnimation();
+    const projectElevenRefAnimation = useAnimation();
+    const projectTwelveRefAnimation = useAnimation();
+    const [projectOneRef, projectOneRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectTwoRef, projectTwoRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectThreeRef, projectThreeRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectFourRef, projectFourRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectFiveRef, projectFiveRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectSixRef, projectSixRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectSevenRef, projectSevenRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectEightRef, projectEightRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectNineRef, projectNineRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectTenRef, projectTenRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectElevenRef, projectElevenRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectTwelveRef, projectTwelveRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const headlineVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    const parentVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, when: 'beforeChildren', staggerChildren: 0.1 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    const childVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    useEffect(() => {
+        if (projectOneRefView) {
+            projectOneRefAnimation.start('visible');
+        }
+    }, [projectOneRefAnimation, projectOneRefView]);
+    useEffect(() => {
+        if (projectTwoRefView) {
+            projectTwoRefAnimation.start('visible');
+        }
+    }, [projectTwoRefAnimation, projectTwoRefView]);
+    useEffect(() => {
+        if (projectThreeRefView) {
+            projectThreeRefAnimation.start('visible');
+        }
+    }, [projectThreeRefAnimation, projectThreeRefView]);
+    useEffect(() => {
+        if (projectFourRefView) {
+            projectFourRefAnimation.start('visible');
+        }
+    }, [projectFourRefAnimation, projectFourRefView]);
+    useEffect(() => {
+        if (projectFiveRefView) {
+            projectFiveRefAnimation.start('visible');
+        }
+    }, [projectFiveRefAnimation, projectFiveRefView]);
+    useEffect(() => {
+        if (projectSixRefView) {
+            projectSixRefAnimation.start('visible');
+        }
+    }, [projectSixRefAnimation, projectSixRefView]);
+    useEffect(() => {
+        if (projectSevenRefView) {
+            projectSevenRefAnimation.start('visible');
+        }
+    }, [projectSevenRefAnimation, projectSevenRefView]);
+    useEffect(() => {
+        if (projectEightRefView) {
+            projectEightRefAnimation.start('visible');
+        }
+    }, [projectEightRefAnimation, projectEightRefView]);
+    useEffect(() => {
+        if (projectNineRefView) {
+            projectNineRefAnimation.start('visible');
+        }
+    }, [projectNineRefAnimation, projectNineRefView]);
+    useEffect(() => {
+        if (projectTenRefView) {
+            projectTenRefAnimation.start('visible');
+        }
+    }, [projectTenRefAnimation, projectTenRefView]);
+    useEffect(() => {
+        if (projectElevenRefView) {
+            projectElevenRefAnimation.start('visible');
+        }
+    }, [projectElevenRefAnimation, projectElevenRefView]);
+    useEffect(() => {
+        if (projectTwelveRefView) {
+            projectTwelveRefAnimation.start('visible');
+        }
+    }, [projectTwelveRefAnimation, projectTwelveRefView]);
     return (
         <>
             <Layout>
                 <SEO title="Projects" />
                 <section className="headline">
-                    <div className="container">
+                    <motion.div className="container" animate="visible" initial="hidden" variants={headlineVariants}>
                         <h2 className="title title__center">My Projects</h2>
-                        <p className="headline__text">
+                        <motion.p
+                            className="headline__text"
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 1, delay: 0.4 },
+                                    ease: [0.6, 0.05, -0.01, 0.9],
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    y: 72,
+                                },
+                            }}
+                        >
                             A list of notable projects I have created — some are taken from tutorials I took while others are based from my own ideas. To view all my projects and its source code,
                             please visit my{' '}
                             <a rel="noopener noreferrer" href="https://github.com/denzeltl?tab=repositories" target="_blank">
                                 repositories
                             </a>{' '}
                             on GitHub.
-                        </p>
-                    </div>
+                        </motion.p>
+                    </motion.div>
                 </section>
                 <section className="projects-page">
                     <div className="container">
                         <ul className="projects-page__list">
-                            <li className="projects-page__item">
+                            <motion.li className="projects-page__item" ref={projectOneRef} animate={projectOneRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.com/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -135,15 +306,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Portfolio 2020</h3>
                                         <p className="projects-page__item__head__date">September 2020</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         My updated personal portfolio site. Created with Gatsby and hosted on Netlify. I used Netlify Forms for the contact form and Framer Motion for the animations
                                         and page transitions.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>Gatsby</li>
                                             <li>Sass</li>
@@ -162,10 +333,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl-pomodoro.netlify.app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -180,15 +351,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Pomodoro Timer</h3>
                                         <p className="projects-page__item__head__date">August 2020</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         A PWA Pomodoro Timer made with React which can be installed as a desktop or mobile app. Aside from its timer feature, it also contains reminders which can be
                                         toggled on or off inside the settings.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>React</li>
                                             <li>Sass</li>
@@ -207,10 +378,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectThreeRef} animate={projectThreeRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/pokedex-app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -225,15 +396,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Pokedex App</h3>
                                         <p className="projects-page__item__head__date">July 2020</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         Search for any pokemon to get its details and base stats. Data is being fetched from <span className="is-italic">PokeAPI</span>. Styled using mobile first
                                         technology.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>React</li>
                                             <li>Sass</li>
@@ -252,10 +423,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectFourRef} animate={projectFourRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/movie-database/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -275,15 +446,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Movie Database App</h3>
                                         <p className="projects-page__item__head__date">July 2020</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         A Movie Database web application where users can search for any movie or series to look up the movie / show information such as the plot, rating, and casts.
                                         Data is being fetched from <span className="is-italic">OMDb API</span>.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>React</li>
                                             <li>Sass</li>
@@ -301,10 +472,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectFiveRef} animate={projectFiveRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/tic-tac-toe/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -319,14 +490,14 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Tic Tac Toe</h3>
                                         <p className="projects-page__item__head__date">April 2020</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         A simple 2-player Tic Tac Toe game made with JavaScript. Created with the help of <span className="is-italic">Web Dev Simplified</span>'s tutorial on YouTube.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>Sass</li>
@@ -344,10 +515,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectSixRef} animate={projectSixRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/rock-paper-scissors/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -362,12 +533,14 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Rock Paper Scissors</h3>
                                         <p className="projects-page__item__head__date">February 2020</p>
-                                    </div>
-                                    <p className="projects-page__item__body">Play a Rock, Paper, Scissors game against the Computer, first to 5 points wins. Made with JavaScript</p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
+                                        Play a Rock, Paper, Scissors game against the Computer, first to 5 points wins. Made with JavaScript
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>Sass</li>
@@ -385,10 +558,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectSevenRef} animate={projectSevenRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a rel="noopener noreferrer" href="https://denzeltl.github.io/weather-app/" target="_blank">
                                         <div className="overlay"></div>
@@ -408,15 +581,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Weather App</h3>
                                         <p className="projects-page__item__head__date">January 2020</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         A simple weather app that fetches and displays the local timezone, weather, and temperature of a city using the api from{' '}
                                         <span className="is-italic">OpenWeatherMap</span>. Querying letters in the search box will return a list of available cities.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>Sass</li>
@@ -435,10 +608,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectEightRef} animate={projectEightRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/personal-portfolio/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -453,12 +626,14 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Portfolio 2019</h3>
                                         <p className="projects-page__item__head__date">September 2019</p>
-                                    </div>
-                                    <p className="projects-page__item__body">My first personal portfolio site. Created with HTML, CSS, and Bootstrap</p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
+                                        My first personal portfolio site. Created with HTML, CSS, and Bootstrap
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>CSS</li>
@@ -476,10 +651,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectNineRef} animate={projectNineRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/rubiks-cube-solution/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -494,15 +669,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Rubik's Cube Solution</h3>
                                         <p className="projects-page__item__head__date">August 2019</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         My take on FreeCodeCamp's <span className="is-italic">Responsive Web Design Projects - Build a Technical Documentation Page</span> project. I created a
                                         documentation page on how to solve the Rubik's Cube.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>CSS</li>
@@ -520,10 +695,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectTenRef} animate={projectTenRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/docprep-template/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -538,15 +713,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Document Preparation Template</h3>
                                         <p className="projects-page__item__head__date">August 2019</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         A personal project made while working at <span className="is-italic">Gadens</span> as Processing Associate to assist with my day-to-day tasks. This template has
                                         helped me eliminate common errors by programming the code to do most of the logic work.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>CSS</li>
@@ -565,10 +740,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectElevenRef} animate={projectElevenRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://denzeltl.github.io/number-guessing-game/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -583,15 +758,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Number Guessing Game</h3>
                                         <p className="projects-page__item__head__date">April 2019</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         Guess a random chosen number between 1-150 within 10 tries. Idea is taken from Mozilla Developer Network's{' '}
                                         <span className="is-italic">Guess the Number Game</span> project.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>CSS</li>
@@ -609,10 +784,10 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects-page__item">
+                            </motion.li>
+                            <motion.li className="projects-page__item" ref={projectTwelveRef} animate={projectTwelveRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a rel="noopener noreferrer" href="https://denzeltl.github.io/rr-wraith/" target="_blank">
                                         <div className="overlay"></div>
@@ -627,15 +802,15 @@ const ProjectsPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects-page__item__details">
-                                    <div className="projects-page__item__head">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
                                         <h3 className="projects-page__item__head__title">Rolls-Royce Wraith Landing Page</h3>
                                         <p className="projects-page__item__head__date">September 2018</p>
-                                    </div>
-                                    <p className="projects-page__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
                                         My first website project created — this challenge is taken from freeCodeCamp's{' '}
                                         <span className="is-italic">Responsive Web Design - Build a Product Landing Page</span> project. I redesigned the landing page of Rolls-Royce Wraith.
-                                    </p>
-                                    <div className="projects-page__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
                                         <ul className="projects-page__item__foot__tools">
                                             <li>HTML</li>
                                             <li>CSS</li>
@@ -653,9 +828,9 @@ const ProjectsPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
+                            </motion.li>
                         </ul>
                     </div>
                 </section>
