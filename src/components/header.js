@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'gatsby';
+import { motion } from 'framer-motion';
 
 import { IoIosMenu, IoMdClose, IoIosMail, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
 
@@ -14,6 +15,19 @@ const Header = () => {
 
     const toggleNavbar = () => {
         setToggledButton(!toggledButton);
+    };
+
+    const headerVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: -72,
+        },
     };
 
     useEffect(() => {
@@ -31,7 +45,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}>
+        <motion.header animate="visible" initial="hidden" variants={headerVariants} className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}>
             <div className="header__inner">
                 <h1 className={`header__logo ${toggledButton ? 'is-toggled' : ''}`}>
                     <Link
@@ -122,7 +136,7 @@ const Header = () => {
                     </button>
                 </nav>
             </div>
-        </header>
+        </motion.header>
     );
 };
 

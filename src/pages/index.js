@@ -52,6 +52,15 @@ const IndexPage = () => {
     const aboutTextRefAnimation = useAnimation();
     const aboutImageRefAnimation = useAnimation();
     const skillsRefAnimation = useAnimation();
+    const skillsTextRefAnimation = useAnimation();
+    const skillsetOneRefAnimation = useAnimation();
+    const skillsetTwoRefAnimation = useAnimation();
+    const skillsetThreeRefAnimation = useAnimation();
+    const projectsRefAnimation = useAnimation();
+    const projectOneRefAnimation = useAnimation();
+    const projectTwoRefAnimation = useAnimation();
+    const projectThreeRefAnimation = useAnimation();
+    const projectsButtonRefAnimation = useAnimation();
     const [aboutTextRef, aboutTextRefView] = useInView({
         triggerOnce: true,
         rootMargin: '-50px',
@@ -61,6 +70,42 @@ const IndexPage = () => {
         rootMargin: '-50px',
     });
     const [skillsRef, skillsRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [skillsTextRef, skillsTextRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [skillsetOneRef, skillsetOneRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [skillsetTwoRef, skillsetTwoRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [skillsetThreeRef, skillsetThreeRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectsRef, projectsRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectOneRef, projectOneRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectTwoRef, projectTwoRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectThreeRef, projectThreeRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px',
+    });
+    const [projectsButtonRef, projectsButtonRefView] = useInView({
         triggerOnce: true,
         rootMargin: '-50px',
     });
@@ -74,6 +119,52 @@ const IndexPage = () => {
         hidden: {
             opacity: 0,
             y: 72,
+        },
+    };
+    const parentVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, when: 'beforeChildren', staggerChildren: 0.1 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    const childVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    const heroVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, when: 'beforeChildren', staggerChildren: 1 },
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            y: 72,
+        },
+    };
+    const buttonVariants = {
+        visible: {
+            opacity: 1,
+            x: 0,
+            ease: [0.6, 0.05, -0.01, 0.9],
+        },
+        hidden: {
+            opacity: 0,
+            x: -100,
         },
     };
     useEffect(() => {
@@ -91,6 +182,51 @@ const IndexPage = () => {
             skillsRefAnimation.start('visible');
         }
     }, [skillsRefAnimation, skillsRefView]);
+    useEffect(() => {
+        if (skillsTextRefView) {
+            skillsTextRefAnimation.start('visible');
+        }
+    }, [skillsTextRefAnimation, skillsTextRefView]);
+    useEffect(() => {
+        if (skillsetOneRefView) {
+            skillsetOneRefAnimation.start('visible');
+        }
+    }, [skillsetOneRefAnimation, skillsetOneRefView]);
+    useEffect(() => {
+        if (skillsetTwoRefView) {
+            skillsetTwoRefAnimation.start('visible');
+        }
+    }, [skillsetTwoRefAnimation, skillsetTwoRefView]);
+    useEffect(() => {
+        if (skillsetThreeRefView) {
+            skillsetThreeRefAnimation.start('visible');
+        }
+    }, [skillsetThreeRefAnimation, skillsetThreeRefView]);
+    useEffect(() => {
+        if (projectsRefView) {
+            projectsRefAnimation.start('visible');
+        }
+    }, [projectsRefAnimation, projectsRefView]);
+    useEffect(() => {
+        if (projectOneRefView) {
+            projectOneRefAnimation.start('visible');
+        }
+    }, [projectOneRefAnimation, projectOneRefView]);
+    useEffect(() => {
+        if (projectTwoRefView) {
+            projectTwoRefAnimation.start('visible');
+        }
+    }, [projectTwoRefAnimation, projectTwoRefView]);
+    useEffect(() => {
+        if (projectThreeRefView) {
+            projectThreeRefAnimation.start('visible');
+        }
+    }, [projectThreeRefAnimation, projectThreeRefView]);
+    useEffect(() => {
+        if (projectsButtonRefView) {
+            projectsButtonRefAnimation.start('visible');
+        }
+    }, [projectsButtonRefAnimation, projectsButtonRefView]);
     return (
         <>
             <Layout>
@@ -126,28 +262,63 @@ const IndexPage = () => {
                             },
                         }}
                     />
-                    <div className="container">
+                    <motion.div className="container" animate="visible" initial="hidden" variants={heroVariants}>
                         <h2 className="hero__title">Hi! I’m Denzel.</h2>
-                        <p className="hero__text">
+                        <motion.p
+                            className="hero__text"
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 1 },
+                                    ease: [0.6, 0.05, -0.01, 0.9],
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    y: 72,
+                                },
+                            }}
+                        >
                             I’m a Web Developer based in Quezon City, Philippines.
                             <br className="is-pc" /> I enjoy creating well-designed, responsive, and accessible websites.
-                        </p>
-                        <Link to="/contact" className="button hero__button">
-                            Contact Me <BsArrowRight />
-                        </Link>
-                    </div>
+                        </motion.p>
+                        <motion.div className="is-inline-block" variants={buttonVariants}>
+                            <Link to="/contact" className="button hero__button">
+                                Contact Me <BsArrowRight />
+                            </Link>
+                        </motion.div>
+                    </motion.div>
                 </section>
                 <section className="about">
                     <div className="container about__container">
-                        <motion.div className="about__details" ref={aboutTextRef} animate={aboutTextRefAnimation} initial="hidden" variants={scrollVariants}>
+                        <motion.div
+                            className="about__details"
+                            ref={aboutTextRef}
+                            animate={aboutTextRefAnimation}
+                            initial="hidden"
+                            variants={{
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 0.6, when: 'beforeChildren' },
+                                    ease: [0.6, 0.05, -0.01, 0.9],
+                                },
+                                hidden: {
+                                    opacity: 0,
+                                    y: 72,
+                                },
+                            }}
+                        >
                             <h3 className="title about__title">About Me</h3>
                             <p className="about__text">
                                 I'm passionate about the things that I do. I continuously seek knowledge from different challenges and experiences. During my free time, I like to learn to keep myself
                                 up-to-date with the latest technologies and find ways to further improve my skill set.
                             </p>
-                            <Link to="/about" className="button about__button">
-                                My Story <BsArrowRight />
-                            </Link>
+                            <motion.div className="is-inline-block" variants={buttonVariants}>
+                                <Link to="/about" className="button about__button" variants={buttonVariants}>
+                                    My Story <BsArrowRight />
+                                </Link>
+                            </motion.div>
                         </motion.div>
                         <motion.div className="about__image" ref={aboutImageRef} animate={aboutImageRefAnimation} initial="hidden" variants={scrollVariants}>
                             <Img fluid={data.headDp.childImageSharp.fluid} alt="Head Display Picture" />
@@ -160,80 +331,84 @@ const IndexPage = () => {
                             Skills
                         </motion.h3>
                         <div className="skills__container">
-                            <p className="skills__container__title">These are the main languages, frameworks / libraries, and tools that I use / have used.</p>
+                            <motion.p className="skills__container__title" ref={skillsTextRef} animate={skillsTextRefAnimation} initial="hidden" variants={scrollVariants}>
+                                These are the main languages, frameworks / libraries, and tools that I use / have used.
+                            </motion.p>
                             <div className="skills__container__content">
-                                <div className="skills__skillset">
+                                <motion.div className="skills__skillset" ref={skillsetOneRef} animate={skillsetOneRefAnimation} initial="hidden" variants={parentVariants}>
                                     <h4 className="skills__skillset__title">Languages</h4>
                                     <ul className="skills__skillset__list">
-                                        <li className="skills__skillset__item">
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiHtml5 className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">HTML</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiCss3 className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">CSS</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiJavascript className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">JavaScript</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiPhp className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">PHP</p>
-                                        </li>
+                                        </motion.li>
                                     </ul>
-                                </div>
-                                <div className="skills__skillset">
+                                </motion.div>
+                                <motion.div className="skills__skillset" ref={skillsetTwoRef} animate={skillsetTwoRefAnimation} initial="hidden" variants={parentVariants}>
                                     <h4 className="skills__skillset__title">Frameworks / Libraries</h4>
                                     <ul className="skills__skillset__list">
-                                        <li className="skills__skillset__item">
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiReact className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">React</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiSass className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">Sass</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiJquery className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">jQuery</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiTailwindcss className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">Tailwind CSS</p>
-                                        </li>
+                                        </motion.li>
                                     </ul>
-                                </div>
-                                <div className="skills__skillset">
+                                </motion.div>
+                                <motion.div className="skills__skillset" ref={skillsetThreeRef} animate={skillsetThreeRefAnimation} initial="hidden" variants={parentVariants}>
                                     <h4 className="skills__skillset__title">Tools</h4>
                                     <ul className="skills__skillset__list">
-                                        <li className="skills__skillset__item">
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiGit className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">Git</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiNpm className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">npm</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiGraphql className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">GraphQL</p>
-                                        </li>
-                                        <li className="skills__skillset__item">
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiNetlify className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">Netlify</p>
-                                        </li>
+                                        </motion.li>
                                     </ul>
-                                </div>
+                                </motion.div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section className="projects">
                     <div className="container projects__container">
-                        <h3 className="title title__center projects__title">Featured Projects</h3>
+                        <motion.h3 className="title title__center projects__title" ref={projectsRef} animate={projectsRefAnimation} initial="hidden" variants={scrollVariants}>
+                            Featured Projects
+                        </motion.h3>
                         <ul className="projects__list">
-                            <li className="projects__item">
+                            <motion.li className="projects__item" ref={projectOneRef} animate={projectOneRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects__item__image">
                                     <a href="https://denzeltl-pomodoro.netlify.app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -248,15 +423,15 @@ const IndexPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects__item__details">
-                                    <div className="projects__item__head">
+                                    <motion.div className="projects__item__head" variants={childVariants}>
                                         <h4 className="projects__item__head__title">Pomodoro Timer</h4>
                                         <p className="projects__item__head__date">August 2020</p>
-                                    </div>
-                                    <p className="projects__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects__item__body" variants={childVariants}>
                                         A PWA Pomodoro Timer made with React which can be installed as a desktop or mobile app. Aside from its timer feature, it also contains reminders which can be
                                         toggled on or off inside the settings.
-                                    </p>
-                                    <div className="projects__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects__item__foot" variants={childVariants}>
                                         <ul className="projects__item__foot__tools">
                                             <li>React</li>
                                             <li>Sass</li>
@@ -275,10 +450,10 @@ const IndexPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects__item">
+                            </motion.li>
+                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects__item__image">
                                     <a rel="noopener noreferrer" href="https://denzeltl.github.io/weather-app/" target="_blank">
                                         <div className="overlay"></div>
@@ -298,15 +473,15 @@ const IndexPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects__item__details">
-                                    <div className="projects__item__head">
+                                    <motion.div className="projects__item__head" variants={childVariants}>
                                         <h4 className="projects__item__head__title">Weather App</h4>
                                         <p className="projects__item__head__date">January 2020</p>
-                                    </div>
-                                    <p className="projects__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects__item__body" variants={childVariants}>
                                         A simple weather app that fetches and displays the local timezone, weather, and temperature of a city using the api from{' '}
                                         <span className="is-italic">OpenWeatherMap</span>. Querying letters in the search box will return a list of available cities.
-                                    </p>
-                                    <div className="projects__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects__item__foot" variants={childVariants}>
                                         <ul className="projects__item__foot__tools">
                                             <li>HTML</li>
                                             <li>Sass</li>
@@ -325,10 +500,10 @@ const IndexPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
-                            <li className="projects__item">
+                            </motion.li>
+                            <motion.li className="projects__item" ref={projectThreeRef} animate={projectThreeRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects__item__image">
                                     <a rel="noopener noreferrer" href="https://denzeltl.github.io/rr-wraith/" target="_blank">
                                         <div className="overlay"></div>
@@ -343,15 +518,15 @@ const IndexPage = () => {
                                     </a>
                                 </div>
                                 <div className="projects__item__details">
-                                    <div className="projects__item__head">
+                                    <motion.div className="projects__item__head" variants={childVariants}>
                                         <h4 className="projects__item__head__title">Rolls-Royce Wraith Landing Page</h4>
                                         <p className="projects__item__head__date">September 2018</p>
-                                    </div>
-                                    <p className="projects__item__body">
+                                    </motion.div>
+                                    <motion.p className="projects__item__body" variants={childVariants}>
                                         My first website project created — this challenge is taken from freeCodeCamp's{' '}
                                         <span className="is-italic">Responsive Web Design - Build a Product Landing Page</span> project. I redesigned the landing page of Rolls-Royce Wraith.
-                                    </p>
-                                    <div className="projects__item__foot">
+                                    </motion.p>
+                                    <motion.div className="projects__item__foot" variants={childVariants}>
                                         <ul className="projects__item__foot__tools">
                                             <li>HTML</li>
                                             <li>CSS</li>
@@ -369,13 +544,15 @@ const IndexPage = () => {
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </li>
+                            </motion.li>
                         </ul>
-                        <Link to="/projects" className="button projects__button">
-                            View More <BsArrowRight />
-                        </Link>
+                        <motion.div className="is-inline-block" ref={projectsButtonRef} animate={projectsButtonRefAnimation} initial="hidden" variants={buttonVariants}>
+                            <Link to="/projects" className="button projects__button">
+                                View More <BsArrowRight />
+                            </Link>
+                        </motion.div>
                     </div>
                 </section>
             </Layout>

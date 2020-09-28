@@ -30,7 +30,7 @@ const SuccessPage = () => {
                                 <br />
                                 Thank you!
                             </p>
-                            <Link to="/" className="button">
+                            <Link to="/" className="button contact-page__success__button">
                                 Go Home <BsArrowRight />
                             </Link>
                         </div>

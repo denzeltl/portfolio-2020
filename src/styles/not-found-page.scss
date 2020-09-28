@@ -1,25 +1,25 @@
 @import 'variables';
 
 .not-found-page {
-    background: $primary-color;
     color: $light-text;
     text-align: center;
 
-    &__container {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+    &__headline {
+        padding: 9rem 0 3rem;
     }
 
     &__title {
         font-size: 8rem;
         margin-bottom: 0.5rem;
+        margin-top: -0.5rem;
     }
 
     &__subtitle {
         font-size: 1.425rem;
         margin-bottom: 3rem;
+    }
+
+    &__button {
+        margin-bottom: 2rem;
     }
 }

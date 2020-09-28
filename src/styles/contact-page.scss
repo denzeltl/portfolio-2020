@@ -64,6 +64,10 @@
         }
     }
 
+    &__button {
+        margin-bottom: 2rem;
+    }
+
     &__success {
         text-align: center;
 
@@ -87,6 +91,10 @@
             font-size: $text-s;
             color: $light-text;
             margin-bottom: 3rem;
+        }
+
+        &__button {
+            margin-bottom: 2rem;
         }
     }
 }
