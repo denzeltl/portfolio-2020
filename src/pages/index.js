@@ -270,7 +270,7 @@ const IndexPage = () => {
                                 visible: {
                                     opacity: 1,
                                     y: 0,
-                                    transition: { duration: 1, delay: 0.6 },
+                                    transition: { duration: 1, delay: 0.8 },
                                     ease: [0.6, 0.05, -0.01, 0.9],
                                 },
                                 hidden: {
@@ -288,7 +288,7 @@ const IndexPage = () => {
                                 visible: {
                                     opacity: 1,
                                     x: 0,
-                                    transition: { delay: 1.5 },
+                                    transition: { delay: 1.8 },
                                     ease: [0.6, 0.05, -0.01, 0.9],
                                 },
                                 hidden: {

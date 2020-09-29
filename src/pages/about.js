@@ -66,6 +66,7 @@ const AboutPage = () => {
         },
     ];
     const [activeTab, setActiveTab] = useState(0);
+    const { position, company, date, duties } = jobs[activeTab];
     const backgroundImageRefAnimation = useAnimation();
     const backgroundTextRefAnimation = useAnimation();
     const experienceRefAnimation = useAnimation();
@@ -177,32 +178,114 @@ const AboutPage = () => {
                                     {jobs.map((job, index) => {
                                         return (
                                             <li key={index} className={`about-page__experience__tab ${activeTab === index ? 'is-active' : ''}`}>
-                                                <button onClick={() => setActiveTab(index)} className="about-page__experience__button">
+                                                <button
+                                                    onClick={() => {
+                                                        setActiveTab(index);
+                                                    }}
+                                                    className="about-page__experience__button"
+                                                >
                                                     <p>{job.slug}</p>
                                                 </button>
                                             </li>
                                         );
                                     })}
                                 </ul>
-                                {jobs.map((job, index) => {
-                                    return (
-                                        <div key={index} className={`about-page__experience__work ${activeTab === index ? 'is-active' : ''}`}>
-                                            <h4 className="about-page__experience__position">{job.position}</h4>
-                                            <h5 className="about-page__experience__company">
-                                                at <span>{job.company}</span>
-                                            </h5>
-                                            <p className="about-page__experience__date">{job.date}</p>
-                                            <ul className="about-page__experience__duties">
-                                                {job.duties.map((duty, index) => (
-                                                    <li className="about-page__experience__duty" key={index}>
-                                                        <HiChevronRight />
-                                                        <p>{duty}</p>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    );
-                                })}
+                                {activeTab === 0 && (
+                                    <motion.div
+                                        animate="visible"
+                                        initial="hidden"
+                                        variants={{
+                                            visible: {
+                                                opacity: 1,
+                                                y: 0,
+                                                ease: [0.6, 0.05, -0.01, 0.9],
+                                            },
+                                            hidden: {
+                                                opacity: 0,
+                                                y: 72,
+                                            },
+                                        }}
+                                        className="about-page__experience__work"
+                                    >
+                                        <h4 className="about-page__experience__position">{position}</h4>
+                                        <h5 className="about-page__experience__company">
+                                            at <span>{company}</span>
+                                        </h5>
+                                        <p className="about-page__experience__date">{date}</p>
+                                        <ul className="about-page__experience__duties">
+                                            {duties.map((duty, index) => (
+                                                <li className="about-page__experience__duty" key={index}>
+                                                    <HiChevronRight />
+                                                    <p>{duty}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                )}
+                                {activeTab === 1 && (
+                                    <motion.div
+                                        animate="visible"
+                                        initial="hidden"
+                                        variants={{
+                                            visible: {
+                                                opacity: 1,
+                                                y: 0,
+                                                ease: [0.6, 0.05, -0.01, 0.9],
+                                            },
+                                            hidden: {
+                                                opacity: 0,
+                                                y: 72,
+                                            },
+                                        }}
+                                        className="about-page__experience__work"
+                                    >
+                                        <h4 className="about-page__experience__position">{position}</h4>
+                                        <h5 className="about-page__experience__company">
+                                            at <span>{company}</span>
+                                        </h5>
+                                        <p className="about-page__experience__date">{date}</p>
+                                        <ul className="about-page__experience__duties">
+                                            {duties.map((duty, index) => (
+                                                <li className="about-page__experience__duty" key={index}>
+                                                    <HiChevronRight />
+                                                    <p>{duty}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                )}
+                                {activeTab === 2 && (
+                                    <motion.div
+                                        animate="visible"
+                                        initial="hidden"
+                                        variants={{
+                                            visible: {
+                                                opacity: 1,
+                                                y: 0,
+                                                ease: [0.6, 0.05, -0.01, 0.9],
+                                            },
+                                            hidden: {
+                                                opacity: 0,
+                                                y: 72,
+                                            },
+                                        }}
+                                        className="about-page__experience__work"
+                                    >
+                                        <h4 className="about-page__experience__position">{position}</h4>
+                                        <h5 className="about-page__experience__company">
+                                            at <span>{company}</span>
+                                        </h5>
+                                        <p className="about-page__experience__date">{date}</p>
+                                        <ul className="about-page__experience__duties">
+                                            {duties.map((duty, index) => (
+                                                <li className="about-page__experience__duty" key={index}>
+                                                    <HiChevronRight />
+                                                    <p>{duty}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                )}
                             </div>
                         </motion.div>
                     </section>

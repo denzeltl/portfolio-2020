@@ -102,13 +102,8 @@
         }
 
         &__work {
-            display: none;
             flex: 1;
             margin-left: 1rem;
-
-            &.is-active {
-                display: block;
-            }
         }
 
         &__position {
