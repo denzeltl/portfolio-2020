@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import { IoIosMail, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
 import { BsArrowRight } from 'react-icons/bs';
@@ -21,9 +21,9 @@ const Footer = ({ title }) => {
                                     Have something to say?
                                     <br />I would love to hear from you!
                                 </p>
-                                <Link to="/contact" className="button footer__button">
+                                <AniLink paintDrip duration={1.2} hex="#f18805" to="/contact" className="button footer__button">
                                     Contact Me <BsArrowRight />
-                                </Link>
+                                </AniLink>
                             </>
                         )}
                     </div>

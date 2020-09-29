@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 
@@ -78,9 +78,9 @@ const NotFoundPage = () => {
                                 },
                             }}
                         >
-                            <Link to="/" className="button not-found-page__button">
+                            <AniLink paintDrip duration={1.2} hex="#f18805" to="/" className="button not-found-page__button">
                                 Go Home <BsArrowRight />
-                            </Link>
+                            </AniLink>
                         </motion.div>
                     </motion.div>
                 </section>

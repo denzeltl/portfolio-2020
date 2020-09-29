@@ -53,6 +53,7 @@
             position: relative;
             letter-spacing: 0.5px;
             transition: color 0.3s;
+            padding-bottom: 5px;
 
             .is-scrolled & {
                 color: $dark-text;
@@ -82,7 +83,7 @@
                 &::after {
                     height: 2px;
                     opacity: 1;
-                    transform: translateY(5px);
+                    transform: translateY(0);
                 }
             }
 
@@ -100,7 +101,7 @@
                     content: '';
                     opacity: 1;
                     transition: height 0.3s, opacity 0.3s, transform 0.3s;
-                    transform: translateY(5px);
+                    transform: translateY(0);
                 }
             }
         }

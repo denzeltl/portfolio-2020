@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -148,7 +148,7 @@ const IndexPage = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1 },
+            transition: { duration: 1, delay: 1 },
             ease: [0.6, 0.05, -0.01, 0.9],
         },
         hidden: {
@@ -270,7 +270,7 @@ const IndexPage = () => {
                                 visible: {
                                     opacity: 1,
                                     y: 0,
-                                    transition: { duration: 1, delay: 0.8 },
+                                    transition: { duration: 1, delay: 1.8 },
                                     ease: [0.6, 0.05, -0.01, 0.9],
                                 },
                                 hidden: {
@@ -288,7 +288,7 @@ const IndexPage = () => {
                                 visible: {
                                     opacity: 1,
                                     x: 0,
-                                    transition: { delay: 1.8 },
+                                    transition: { delay: 2.8 },
                                     ease: [0.6, 0.05, -0.01, 0.9],
                                 },
                                 hidden: {
@@ -297,9 +297,9 @@ const IndexPage = () => {
                                 },
                             }}
                         >
-                            <Link to="/contact" className="button hero__button">
+                            <AniLink paintDrip duration={1.2} hex="#f18805" to="/contact" className="button hero__button">
                                 Contact Me <BsArrowRight />
-                            </Link>
+                            </AniLink>
                         </motion.div>
                     </motion.div>
                 </section>
@@ -329,9 +329,9 @@ const IndexPage = () => {
                                 up-to-date with the latest technologies and find ways to further improve my skill set.
                             </p>
                             <motion.div className="is-inline-block" variants={buttonVariants}>
-                                <Link to="/about" className="button about__button" variants={buttonVariants}>
+                                <AniLink paintDrip duration={1.2} hex="#f18805" to="/about" className="button about__button" variants={buttonVariants}>
                                     My Story <BsArrowRight />
-                                </Link>
+                                </AniLink>
                             </motion.div>
                         </motion.div>
                         <motion.div className="about__image" ref={aboutImageRef} animate={aboutImageRefAnimation} initial="hidden" variants={scrollVariants}>
@@ -563,9 +563,9 @@ const IndexPage = () => {
                             </motion.li>
                         </ul>
                         <motion.div className="is-inline-block" ref={projectsButtonRef} animate={projectsButtonRefAnimation} initial="hidden" variants={buttonVariants}>
-                            <Link to="/projects" className="button projects__button">
+                            <AniLink paintDrip duration={1.2} hex="#f18805" to="/projects" className="button projects__button">
                                 View More <BsArrowRight />
-                            </Link>
+                            </AniLink>
                         </motion.div>
                     </div>
                 </section>

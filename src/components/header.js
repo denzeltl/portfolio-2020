@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { motion } from 'framer-motion';
 
 import { IoIosMenu, IoMdClose, IoIosMail, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
@@ -21,7 +21,7 @@ const Header = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 1 },
+            transition: { duration: 1, delay: 1 },
             ease: [0.6, 0.05, -0.01, 0.9],
         },
         hidden: {
@@ -29,7 +29,18 @@ const Header = () => {
             y: -72,
         },
     };
-
+    // const navLinkVariants = {
+    //     visible: {
+    //         opacity: 1,
+    //         x: 0,
+    //         transition: { duration: 0.4 },
+    //         ease: [0.6, 0.05, -0.01, 0.9],
+    //     },
+    //     hidden: {
+    //         opacity: 0,
+    //         x: -32,
+    //     },
+    // };
     useEffect(() => {
         const handleScroll = () => {
             const scrolled = window.scrollY > document.querySelector('.header').offsetHeight / 2;
@@ -48,86 +59,34 @@ const Header = () => {
         <motion.header animate="visible" initial="hidden" variants={headerVariants} className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}>
             <div className="header__inner">
                 <h1 className={`header__logo ${toggledButton ? 'is-toggled' : ''}`}>
-                    <Link
-                        onClick={() => {
-                            setToggledButton(false);
-                        }}
-                        to="/"
-                    >
+                    <AniLink paintDrip duration={1.2} hex="#f18805" to="/">
                         denzeltl
-                    </Link>
+                    </AniLink>
                 </h1>
                 <button onClick={toggleNavbar} className="header__burger">
                     <IoIosMenu />
                 </button>
                 <nav className={`header__nav ${toggledButton ? 'is-toggled' : ''}`}>
-                    <Link
-                        onClick={() => {
-                            setToggledButton(false);
-                        }}
-                        activeClassName="is-active"
-                        to="/"
-                    >
+                    <AniLink paintDrip duration={1.2} hex="#f18805" activeClassName="is-active" to="/">
                         Home
-                    </Link>
-                    <Link
-                        onClick={() => {
-                            setToggledButton(false);
-                        }}
-                        activeClassName="is-active"
-                        to="/about"
-                    >
+                    </AniLink>
+                    <AniLink paintDrip duration={1.2} hex="#f18805" activeClassName="is-active" to="/about">
                         About
-                    </Link>
-                    <Link
-                        onClick={() => {
-                            setToggledButton(false);
-                        }}
-                        activeClassName="is-active"
-                        to="/projects"
-                    >
+                    </AniLink>
+                    <AniLink paintDrip duration={1.2} hex="#f18805" activeClassName="is-active" to="/projects">
                         Projects
-                    </Link>
-                    <Link
-                        onClick={() => {
-                            setToggledButton(false);
-                        }}
-                        className="is-contact"
-                        activeClassName="is-active"
-                        to="/contact"
-                    >
+                    </AniLink>
+                    <AniLink paintDrip duration={1.2} hex="#f18805" className="is-contact" activeClassName="is-active" to="/contact">
                         Contact
-                    </Link>
+                    </AniLink>
                     <ul className="header__links">
-                        <a
-                            onClick={() => {
-                                setToggledButton(false);
-                            }}
-                            href="mailto:denzeltlee@gmail.com"
-                            className="header__link"
-                        >
+                        <a href="mailto:denzeltlee@gmail.com" className="header__link">
                             <IoIosMail className="header__icon" />
                         </a>
-                        <a
-                            onClick={() => {
-                                setToggledButton(false);
-                            }}
-                            href="https://www.linkedin.com/in/denzel-tiam-lee"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            className="header__link"
-                        >
+                        <a href="https://www.linkedin.com/in/denzel-tiam-lee" rel="noopener noreferrer" target="_blank" className="header__link">
                             <IoLogoLinkedin className="header__icon" />
                         </a>
-                        <a
-                            onClick={() => {
-                                setToggledButton(false);
-                            }}
-                            href="https://github.com/denzeltl?tab=repositories"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            className="header__link"
-                        >
+                        <a href="https://github.com/denzeltl?tab=repositories" rel="noopener noreferrer" target="_blank" className="header__link">
                             <IoLogoGithub className="header__icon" />
                         </a>
                     </ul>
