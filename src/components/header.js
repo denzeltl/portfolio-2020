@@ -32,7 +32,23 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}>
+        <motion.header
+            initial="hidden"
+            animate="visible"
+            variants={{
+                visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 1 },
+                    ease: [0.6, 0.05, -0.01, 0.9],
+                },
+                hidden: {
+                    opacity: 0,
+                    y: -72,
+                },
+            }}
+            className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}
+        >
             <div className="header__inner">
                 <h1 className={`header__logo ${toggledButton ? 'is-toggled' : ''}`}>
                     <Link to="/">denzeltl</Link>
@@ -211,7 +227,7 @@ const Header = () => {
                     )}
                 </AnimatePresence>
             </div>
-        </header>
+        </motion.header>
     );
 };
 
