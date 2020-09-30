@@ -21,7 +21,7 @@ const Footer = ({ title }) => {
                                     Have something to say?
                                     <br />I would love to hear from you!
                                 </p>
-                                <AniLink paintDrip duration={1.2} hex="#f18805" to="/contact" className="button footer__button">
+                                <AniLink cover duration={1} direction="up" bg="#f18805" to="/contact" className="button footer__button">
                                     Contact Me <BsArrowRight />
                                 </AniLink>
                             </>

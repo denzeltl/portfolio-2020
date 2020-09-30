@@ -78,7 +78,7 @@ const NotFoundPage = () => {
                                 },
                             }}
                         >
-                            <AniLink paintDrip duration={1.2} hex="#f18805" to="/" className="button not-found-page__button">
+                            <AniLink cover duration={1} direction="up" bg="#f18805" to="/" className="button not-found-page__button">
                                 Go Home <BsArrowRight />
                             </AniLink>
                         </motion.div>

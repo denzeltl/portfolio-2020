@@ -56,10 +56,10 @@ const Header = () => {
     }, []);
 
     return (
-        <motion.header animate="visible" initial="hidden" variants={headerVariants} className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}>
+        <header className={`header ${scrolledNavbar ? 'is-scrolled' : ''}`}>
             <div className="header__inner">
                 <h1 className={`header__logo ${toggledButton ? 'is-toggled' : ''}`}>
-                    <AniLink paintDrip duration={1.2} hex="#f18805" to="/">
+                    <AniLink cover duration={1} direction="up" bg="#f18805" to="/">
                         denzeltl
                     </AniLink>
                 </h1>
@@ -67,16 +67,16 @@ const Header = () => {
                     <IoIosMenu />
                 </button>
                 <nav className={`header__nav ${toggledButton ? 'is-toggled' : ''}`}>
-                    <AniLink paintDrip duration={1.2} hex="#f18805" activeClassName="is-active" to="/">
+                    <AniLink cover duration={1} direction="up" bg="#f18805" activeClassName="is-active" to="/">
                         Home
                     </AniLink>
-                    <AniLink paintDrip duration={1.2} hex="#f18805" activeClassName="is-active" to="/about">
+                    <AniLink cover duration={1} direction="up" bg="#f18805" activeClassName="is-active" to="/about">
                         About
                     </AniLink>
-                    <AniLink paintDrip duration={1.2} hex="#f18805" activeClassName="is-active" to="/projects">
+                    <AniLink cover duration={1} direction="up" bg="#f18805" activeClassName="is-active" to="/projects">
                         Projects
                     </AniLink>
-                    <AniLink paintDrip duration={1.2} hex="#f18805" className="is-contact" activeClassName="is-active" to="/contact">
+                    <AniLink cover duration={1} direction="up" bg="#f18805" className="is-contact" activeClassName="is-active" to="/contact">
                         Contact
                     </AniLink>
                     <ul className="header__links">
@@ -95,7 +95,7 @@ const Header = () => {
                     </button>
                 </nav>
             </div>
-        </motion.header>
+        </header>
     );
 };
 

@@ -297,7 +297,7 @@ const IndexPage = () => {
                                 },
                             }}
                         >
-                            <AniLink paintDrip duration={1.2} hex="#f18805" to="/contact" className="button hero__button">
+                            <AniLink cover duration={1} direction="up" bg="#f18805" to="/contact" className="button hero__button">
                                 Contact Me <BsArrowRight />
                             </AniLink>
                         </motion.div>
@@ -329,7 +329,7 @@ const IndexPage = () => {
                                 up-to-date with the latest technologies and find ways to further improve my skill set.
                             </p>
                             <motion.div className="is-inline-block" variants={buttonVariants}>
-                                <AniLink paintDrip duration={1.2} hex="#f18805" to="/about" className="button about__button" variants={buttonVariants}>
+                                <AniLink cover duration={1} direction="up" bg="#f18805" to="/about" className="button about__button" variants={buttonVariants}>
                                     My Story <BsArrowRight />
                                 </AniLink>
                             </motion.div>
@@ -563,7 +563,7 @@ const IndexPage = () => {
                             </motion.li>
                         </ul>
                         <motion.div className="is-inline-block" ref={projectsButtonRef} animate={projectsButtonRefAnimation} initial="hidden" variants={buttonVariants}>
-                            <AniLink paintDrip duration={1.2} hex="#f18805" to="/projects" className="button projects__button">
+                            <AniLink cover duration={1} direction="up" bg="#f18805" to="/projects" className="button projects__button">
                                 View More <BsArrowRight />
                             </AniLink>
                         </motion.div>

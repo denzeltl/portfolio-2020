@@ -85,7 +85,7 @@ const SuccessPage = () => {
                                     },
                                 }}
                             >
-                                <AniLink paintDrip duration={1.2} hex="#f18805" to="/" className="button contact-page__success__button">
+                                <AniLink cover duration={1} direction="up" bg="#f18805" to="/" className="button contact-page__success__button">
                                     Go Home <BsArrowRight />
                                 </AniLink>
                             </motion.div>
