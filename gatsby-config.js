@@ -3,9 +3,19 @@ module.exports = {
         title: `denzeltl - Web Developer`,
         description: `denzeltl - Web Developer portfolio based in Quezon City, Philippines.`,
         author: `@denzeltl`,
+        siteUrl: `https://www.denzeltl.com`,
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: 'UA-179277832-1',
+                head: true,
+                anonymize: true,
+            },
+        },
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
