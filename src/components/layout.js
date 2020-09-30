@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 
 import Header from './header';
 import '../styles/layout.scss';
