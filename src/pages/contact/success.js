@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
+import { Link } from 'gatsby';
 
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
@@ -85,9 +85,9 @@ const SuccessPage = () => {
                                     },
                                 }}
                             >
-                                <AniLink cover duration={1} direction="up" bg="#f18805" to="/" className="button contact-page__success__button">
+                                <Link to="/" className="button contact-page__success__button">
                                     Go Home <BsArrowRight />
-                                </AniLink>
+                                </Link>
                             </motion.div>
                         </motion.div>
                     </div>
