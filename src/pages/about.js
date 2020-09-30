@@ -17,7 +17,7 @@ const AboutPage = () => {
         query {
             bodyDp: file(relativePath: { eq: "body-display-picture.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 375) {
                         ...GatsbyImageSharpFluid
                     }
                 }

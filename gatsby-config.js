@@ -15,7 +15,17 @@ module.exports = {
             },
         },
         `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-sitemap`,
+        {
+            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            options: {
+                fonts: [
+                    {
+                        family: `Lato`,
+                        variants: [`400`, `400i`, `700`],
+                    },
+                ],
+            },
+        }`gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {

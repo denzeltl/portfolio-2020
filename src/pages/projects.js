@@ -18,84 +18,84 @@ const ProjectsPage = () => {
         query {
             projectPortfolio2020: file(relativePath: { eq: "project-portfolio-2020.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectPomodoro: file(relativePath: { eq: "project-pomodoro.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectPokedex: file(relativePath: { eq: "project-pokedex.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectMovie: file(relativePath: { eq: "project-movie.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectTicTacToe: file(relativePath: { eq: "project-tic-tac-toe.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectRps: file(relativePath: { eq: "project-rps.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectWeather: file(relativePath: { eq: "project-weather.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectPortfolio2019: file(relativePath: { eq: "project-portfolio-2019.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectRubiks: file(relativePath: { eq: "project-rubiks.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectDocprep: file(relativePath: { eq: "project-docprep.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectNumber: file(relativePath: { eq: "project-number.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectRr: file(relativePath: { eq: "project-rr.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }

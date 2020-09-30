@@ -21,28 +21,28 @@ const IndexPage = () => {
         query {
             headDp: file(relativePath: { eq: "head-display-picture.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 350) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectPomodoro: file(relativePath: { eq: "project-pomodoro.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 700) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectWeather: file(relativePath: { eq: "project-weather.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 700) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
             projectRr: file(relativePath: { eq: "project-rr.png" }) {
                 childImageSharp {
-                    fluid(maxWidth: 2000) {
+                    fluid(maxWidth: 700) {
                         ...GatsbyImageSharpFluid
                     }
                 }
