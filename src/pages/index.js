@@ -442,8 +442,8 @@ const IndexPage = () => {
                                         <p className="projects__item__head__date">August 2020</p>
                                     </motion.div>
                                     <motion.p className="projects__item__body" variants={childVariants}>
-                                        A PWA Pomodoro Timer made with React which can be installed as a desktop or mobile app. Aside from its timer feature, it also contains reminders which can be
-                                        toggled on or off inside the settings.
+                                        A PWA Pomodoro Timer made with React which can be installed as a desktop or mobile app. Aside from its timer feature, it also has reminders which can be seen
+                                        inside the settings.
                                     </motion.p>
                                     <motion.div className="projects__item__foot" variants={childVariants}>
                                         <ul className="projects__item__foot__tools">
@@ -492,7 +492,7 @@ const IndexPage = () => {
                                         <p className="projects__item__head__date">January 2020</p>
                                     </motion.div>
                                     <motion.p className="projects__item__body" variants={childVariants}>
-                                        A simple weather app that fetches and displays the local timezone, weather, and temperature of a city using the api from{' '}
+                                        A simple weather app that fetches and displays the current local timezone, weather, and temperature of a city using the API from{' '}
                                         <span className="is-italic">OpenWeatherMap</span>. Querying letters in the search box will return a list of available cities.
                                     </motion.p>
                                     <motion.div className="projects__item__foot" variants={childVariants}>
