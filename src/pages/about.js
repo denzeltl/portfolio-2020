@@ -26,10 +26,23 @@ const AboutPage = () => {
     `);
     const jobs = [
         {
+            slug: 'ColCap',
+            position: 'Front End Web Developer',
+            company: 'ColCap Servicing Pty Ltd',
+            date: 'November 2020 - Present',
+            duties: [
+                'Create new and complex websites and landing pages from briefs',
+                'Develop functional and appealing web and mobile-based applications based on usability',
+                'Work with the Marketing Manager and Graphic Designer to identify deliverables',
+                'Adherence to best practice design',
+                'Quality assurance and integrity of all websites',
+            ],
+        },
+        {
             slug: 'LH & C',
             position: 'Web Developer',
-            company: 'LH & Creatives',
-            date: 'October 2019 - Present',
+            company: 'LH & Creatives Inc',
+            date: 'October 2019 - November 2020',
             duties: [
                 'Build both interactive and responsive websites based from the provided design material',
                 'Create and use custom data from CMS like Wordpress for dynamic content updating',
@@ -255,6 +268,38 @@ const AboutPage = () => {
                                     </motion.div>
                                 )}
                                 {activeTab === 2 && (
+                                    <motion.div
+                                        animate="visible"
+                                        initial="hidden"
+                                        variants={{
+                                            visible: {
+                                                opacity: 1,
+                                                y: 0,
+                                                ease: [0.6, 0.05, -0.01, 0.9],
+                                            },
+                                            hidden: {
+                                                opacity: 0,
+                                                y: 72,
+                                            },
+                                        }}
+                                        className="about-page__experience__work"
+                                    >
+                                        <h4 className="about-page__experience__position">{position}</h4>
+                                        <h5 className="about-page__experience__company">
+                                            at <span>{company}</span>
+                                        </h5>
+                                        <p className="about-page__experience__date">{date}</p>
+                                        <ul className="about-page__experience__duties">
+                                            {duties.map((duty, index) => (
+                                                <li className="about-page__experience__duty" key={index}>
+                                                    <HiChevronRight />
+                                                    <p>{duty}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                )}
+                                {activeTab === 3 && (
                                     <motion.div
                                         animate="visible"
                                         initial="hidden"
