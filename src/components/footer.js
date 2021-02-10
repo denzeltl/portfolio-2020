@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import { Link } from "gatsby";
 
-import { IoIosMail, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
-import { BsArrowRight } from 'react-icons/bs';
+import { IoIosMail, IoLogoLinkedin, IoLogoGithub } from "react-icons/io";
+import { BsArrowRight } from "react-icons/bs";
 
-import '../styles/footer.scss';
+import "../styles/footer.scss";
 
 const Footer = ({ title }) => {
     return (
@@ -12,7 +12,7 @@ const Footer = ({ title }) => {
             <div className="container">
                 <div className="footer__container">
                     <div className="footer__contact">
-                        {title === 'Contact' ? (
+                        {title === "Contact" ? (
                             <p className="footer__via">Reach me via:</p>
                         ) : (
                             <>
@@ -39,7 +39,7 @@ const Footer = ({ title }) => {
                         </a>
                     </ul>
                 </div>
-                <p className="footer__copyright">&copy; 2020 Denzel Tiam-Lee</p>
+                <p className="footer__copyright">&copy; 2021 Denzel Tiam-Lee</p>
             </div>
         </footer>
     );
