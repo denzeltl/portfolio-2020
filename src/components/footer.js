@@ -31,10 +31,10 @@ const Footer = ({ title }) => {
                         <a href="mailto:denzeltlee@gmail.com" className="footer__link">
                             <IoIosMail className="footer__icon" />
                         </a>
-                        <a rel="noopener noreferrer" href="https://www.linkedin.com/in/denzel-tiam-lee" target="_blank" className="footer__link">
+                        <a rel="noopener noreferrer" href="https://www.linkedin.com/in/denzeltl/" target="_blank" className="footer__link">
                             <IoLogoLinkedin className="footer__icon" />
                         </a>
-                        <a rel="noopener noreferrer" href="https://github.com/denzeltl?tab=repositories" target="_blank" className="footer__link">
+                        <a rel="noopener noreferrer" href="https://github.com/denzeltl" target="_blank" className="footer__link">
                             <IoLogoGithub className="footer__icon" />
                         </a>
                     </ul>
