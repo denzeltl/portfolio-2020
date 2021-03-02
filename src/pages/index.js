@@ -11,7 +11,7 @@ import Footer from '../components/footer';
 
 import Particles from 'react-particles-js';
 import { BsArrowRight } from 'react-icons/bs';
-import { SiHtml5, SiCss3, SiJavascript, SiPhp, SiReact, SiSass, SiJquery, SiTailwindcss, SiGit, SiGithub, SiNpm, SiGraphql, SiNetlify } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiSass, SiJquery, SiTailwindcss, SiGit, SiGithub, SiNpm, SiGraphql, SiNetlify } from 'react-icons/si';
 import { FiExternalLink } from 'react-icons/fi';
 
 import '../styles/index.scss';
@@ -365,8 +365,8 @@ const IndexPage = () => {
                                             <p className="skills__skillset__name">JavaScript</p>
                                         </motion.li>
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
-                                            <SiPhp className="skills__skillset__icon" />
-                                            <p className="skills__skillset__name">PHP</p>
+                                            <SiTypescript className="skills__skillset__icon" />
+                                            <p className="skills__skillset__name">TypeScript</p>
                                         </motion.li>
                                     </ul>
                                 </motion.div>
