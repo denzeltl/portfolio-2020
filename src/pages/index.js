@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { useInView } from 'react-intersection-observer';
-import { useAnimation, motion } from 'framer-motion';
-import { Link } from 'gatsby';
+import React, { useEffect } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { useInView } from "react-intersection-observer";
+import { useAnimation, motion } from "framer-motion";
+import { Link } from "gatsby";
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Footer from '../components/footer';
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Footer from "../components/footer";
 
-import Particles from 'react-particles-js';
-import { BsArrowRight } from 'react-icons/bs';
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiSass, SiJquery, SiTailwindcss, SiGit, SiGithub, SiNpm, SiGraphql, SiNetlify } from 'react-icons/si';
-import { FiExternalLink } from 'react-icons/fi';
+import Particles from "react-particles-js";
+import { BsArrowRight } from "react-icons/bs";
+import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiSass, SiGatsby, SiMaterialUi, SiGit, SiGithub, SiNpm, SiGraphql, SiNetlify } from "react-icons/si";
+import { FiExternalLink } from "react-icons/fi";
 
-import '../styles/index.scss';
+import "../styles/index.scss";
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
@@ -63,51 +63,51 @@ const IndexPage = () => {
     const projectsButtonRefAnimation = useAnimation();
     const [aboutTextRef, aboutTextRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [aboutImageRef, aboutImageRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [skillsRef, skillsRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [skillsTextRef, skillsTextRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [skillsetOneRef, skillsetOneRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [skillsetTwoRef, skillsetTwoRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [skillsetThreeRef, skillsetThreeRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [projectsRef, projectsRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [projectOneRef, projectOneRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [projectTwoRef, projectTwoRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [projectThreeRef, projectThreeRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [projectsButtonRef, projectsButtonRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const scrollVariants = {
         visible: {
@@ -125,7 +125,7 @@ const IndexPage = () => {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6, when: 'beforeChildren', staggerChildren: 0.1 },
+            transition: { duration: 0.6, when: "beforeChildren", staggerChildren: 0.1 },
             ease: [0.6, 0.05, -0.01, 0.9],
         },
         hidden: {
@@ -169,62 +169,62 @@ const IndexPage = () => {
     };
     useEffect(() => {
         if (aboutTextRefView) {
-            aboutTextRefAnimation.start('visible');
+            aboutTextRefAnimation.start("visible");
         }
     }, [aboutTextRefAnimation, aboutTextRefView]);
     useEffect(() => {
         if (aboutImageRefView) {
-            aboutImageRefAnimation.start('visible');
+            aboutImageRefAnimation.start("visible");
         }
     }, [aboutImageRefAnimation, aboutImageRefView]);
     useEffect(() => {
         if (skillsRefView) {
-            skillsRefAnimation.start('visible');
+            skillsRefAnimation.start("visible");
         }
     }, [skillsRefAnimation, skillsRefView]);
     useEffect(() => {
         if (skillsTextRefView) {
-            skillsTextRefAnimation.start('visible');
+            skillsTextRefAnimation.start("visible");
         }
     }, [skillsTextRefAnimation, skillsTextRefView]);
     useEffect(() => {
         if (skillsetOneRefView) {
-            skillsetOneRefAnimation.start('visible');
+            skillsetOneRefAnimation.start("visible");
         }
     }, [skillsetOneRefAnimation, skillsetOneRefView]);
     useEffect(() => {
         if (skillsetTwoRefView) {
-            skillsetTwoRefAnimation.start('visible');
+            skillsetTwoRefAnimation.start("visible");
         }
     }, [skillsetTwoRefAnimation, skillsetTwoRefView]);
     useEffect(() => {
         if (skillsetThreeRefView) {
-            skillsetThreeRefAnimation.start('visible');
+            skillsetThreeRefAnimation.start("visible");
         }
     }, [skillsetThreeRefAnimation, skillsetThreeRefView]);
     useEffect(() => {
         if (projectsRefView) {
-            projectsRefAnimation.start('visible');
+            projectsRefAnimation.start("visible");
         }
     }, [projectsRefAnimation, projectsRefView]);
     useEffect(() => {
         if (projectOneRefView) {
-            projectOneRefAnimation.start('visible');
+            projectOneRefAnimation.start("visible");
         }
     }, [projectOneRefAnimation, projectOneRefView]);
     useEffect(() => {
         if (projectTwoRefView) {
-            projectTwoRefAnimation.start('visible');
+            projectTwoRefAnimation.start("visible");
         }
     }, [projectTwoRefAnimation, projectTwoRefView]);
     useEffect(() => {
         if (projectThreeRefView) {
-            projectThreeRefAnimation.start('visible');
+            projectThreeRefAnimation.start("visible");
         }
     }, [projectThreeRefAnimation, projectThreeRefView]);
     useEffect(() => {
         if (projectsButtonRefView) {
-            projectsButtonRefAnimation.start('visible');
+            projectsButtonRefAnimation.start("visible");
         }
     }, [projectsButtonRefAnimation, projectsButtonRefView]);
     return (
@@ -256,8 +256,8 @@ const IndexPage = () => {
                                 move: {
                                     random: true,
                                     speed: 1,
-                                    direction: 'top',
-                                    out_mode: 'out',
+                                    direction: "top",
+                                    out_mode: "out",
                                 },
                             },
                         }}
@@ -314,7 +314,7 @@ const IndexPage = () => {
                                 visible: {
                                     opacity: 1,
                                     y: 0,
-                                    transition: { duration: 0.6, when: 'beforeChildren' },
+                                    transition: { duration: 0.6, when: "beforeChildren" },
                                     ease: [0.6, 0.05, -0.01, 0.9],
                                 },
                                 hidden: {
@@ -378,16 +378,16 @@ const IndexPage = () => {
                                             <p className="skills__skillset__name">React</p>
                                         </motion.li>
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
+                                            <SiGatsby className="skills__skillset__icon" />
+                                            <p className="skills__skillset__name">Gatsby</p>
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiSass className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">Sass</p>
                                         </motion.li>
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
-                                            <SiJquery className="skills__skillset__icon" />
-                                            <p className="skills__skillset__name">jQuery</p>
-                                        </motion.li>
-                                        <motion.li className="skills__skillset__item" variants={childVariants}>
-                                            <SiTailwindcss className="skills__skillset__icon" />
-                                            <p className="skills__skillset__name">Tailwind CSS</p>
+                                            <SiMaterialUi className="skills__skillset__icon" />
+                                            <p className="skills__skillset__name">Material UI</p>
                                         </motion.li>
                                     </ul>
                                 </motion.div>
@@ -432,7 +432,7 @@ const IndexPage = () => {
                                             </p>
                                         </div>
                                         <div className="image-container">
-                                            <Img fluid={data.projectPomodoro.childImageSharp.fluid} style={{ maxHeight: '21rem' }} alt="Screenshot of Pomodoro Project" />
+                                            <Img fluid={data.projectPomodoro.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Pomodoro Project" />
                                         </div>
                                     </a>
                                 </div>
@@ -479,8 +479,8 @@ const IndexPage = () => {
                                         <div className="image-container">
                                             <Img
                                                 fluid={data.projectWeather.childImageSharp.fluid}
-                                                style={{ maxHeight: '21rem' }}
-                                                imgStyle={{ objectPosition: 'center top' }}
+                                                style={{ maxHeight: "21rem" }}
+                                                imgStyle={{ objectPosition: "center top" }}
                                                 alt="Screenshot of Weather App Project"
                                             />
                                         </div>
@@ -492,7 +492,7 @@ const IndexPage = () => {
                                         <p className="projects__item__head__date">January 2020</p>
                                     </motion.div>
                                     <motion.p className="projects__item__body" variants={childVariants}>
-                                        A simple weather app that fetches and displays the current local timezone, weather, and temperature of a city using the API from{' '}
+                                        A simple weather app that fetches and displays the current local timezone, weather, and temperature of a city using the API from{" "}
                                         <span className="is-italic">OpenWeatherMap</span>. Querying letters in the search box will return a list of available cities.
                                     </motion.p>
                                     <motion.div className="projects__item__foot" variants={childVariants}>
@@ -527,7 +527,7 @@ const IndexPage = () => {
                                             </p>
                                         </div>
                                         <div className="image-container">
-                                            <Img fluid={data.projectRr.childImageSharp.fluid} style={{ maxHeight: '21rem' }} alt="Screenshot of Rolls-Royce Project" />
+                                            <Img fluid={data.projectRr.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Rolls-Royce Project" />
                                         </div>
                                     </a>
                                 </div>
@@ -537,7 +537,7 @@ const IndexPage = () => {
                                         <p className="projects__item__head__date">September 2018</p>
                                     </motion.div>
                                     <motion.p className="projects__item__body" variants={childVariants}>
-                                        My first website project created — this challenge is taken from freeCodeCamp's{' '}
+                                        My first website project created — this challenge is taken from freeCodeCamp's{" "}
                                         <span className="is-italic">Responsive Web Design - Build a Product Landing Page</span> project. I redesigned the landing page of Rolls-Royce Wraith.
                                     </motion.p>
                                     <motion.div className="projects__item__foot" variants={childVariants}>
