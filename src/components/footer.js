@@ -28,7 +28,7 @@ const Footer = ({ title }) => {
                         )}
                     </div>
                     <ul className="footer__links">
-                        <a href="mailto:denzeltlee@gmail.com" className="footer__link">
+                        <a href="mailto:hello@denzeltl.com" className="footer__link">
                             <IoIosMail className="footer__icon" />
                         </a>
                         <a rel="noopener noreferrer" href="https://www.linkedin.com/in/denzeltl/" target="_blank" className="footer__link">

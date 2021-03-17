@@ -3,7 +3,7 @@
   "private": true,
   "description": "My personal portfolio made with Gatsby",
   "version": "0.1.0",
-  "author": "Denzel <denzeltlee@gmail.com>",
+  "author": "Denzel <hello@denzeltl.com>",
   "dependencies": {
     "framer-motion": "^2.9.4",
     "gatsby": "^2.27.4",

@@ -174,7 +174,7 @@ const Header = () => {
                                             y: 32,
                                         },
                                     }}
-                                    href="mailto:denzeltlee@gmail.com"
+                                    href="mailto:hello@denzeltl.com"
                                     className="header__link"
                                 >
                                     <IoIosMail className="header__icon" />
