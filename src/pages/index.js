@@ -33,7 +33,7 @@ const IndexPage = () => {
                     }
                 }
             }
-            projectWeather: file(relativePath: { eq: "project-weather.png" }) {
+            projectTime: file(relativePath: { eq: "project-time.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 700) {
                         ...GatsbyImageSharpFluid
@@ -424,6 +424,49 @@ const IndexPage = () => {
                         <ul className="projects__list">
                             <motion.li className="projects__item" ref={projectOneRef} animate={projectOneRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects__item__image">
+                                    <a href="https://time-until.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                        <div className="overlay"></div>
+                                        <div className="text">
+                                            <p>
+                                                Visit Site <FiExternalLink />
+                                            </p>
+                                        </div>
+                                        <div className="image-container">
+                                            <Img fluid={data.projectTime.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Time Until Project" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="projects__item__details">
+                                    <motion.div className="projects__item__head" variants={childVariants}>
+                                        <h4 className="projects__item__head__title">Time Until</h4>
+                                        <p className="projects__item__head__date">March 2021</p>
+                                    </motion.div>
+                                    <motion.p className="projects__item__body" variants={childVariants}>
+                                        Display a countdown timer in days in your local time zone or specify a particular country to display in their time zone.
+                                    </motion.p>
+                                    <motion.div className="projects__item__foot" variants={childVariants}>
+                                        <ul className="projects__item__foot__tools">
+                                            <li>React</li>
+                                            <li>TypeScript</li>
+                                            <li>Material UI</li>
+                                        </ul>
+                                        <ul className="projects__item__foot__links">
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/time-until" target="_blank">
+                                                    <SiGithub />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://time-until.netlify.app/" target="_blank">
+                                                    <FiExternalLink />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
+                                </div>
+                            </motion.li>
+                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
+                                <div className="projects__item__image">
                                     <a href="https://denzeltl-pomodoro.netlify.app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
                                         <div className="text">
@@ -460,56 +503,6 @@ const IndexPage = () => {
                                             </li>
                                             <li>
                                                 <a rel="noopener noreferrer" href="https://denzeltl-pomodoro.netlify.app/" target="_blank">
-                                                    <FiExternalLink />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </motion.div>
-                                </div>
-                            </motion.li>
-                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
-                                <div className="projects__item__image">
-                                    <a rel="noopener noreferrer" href="https://denzeltl.github.io/weather-app/" target="_blank">
-                                        <div className="overlay"></div>
-                                        <div className="text">
-                                            <p>
-                                                Visit Site <FiExternalLink />
-                                            </p>
-                                        </div>
-                                        <div className="image-container">
-                                            <Img
-                                                fluid={data.projectWeather.childImageSharp.fluid}
-                                                style={{ maxHeight: "21rem" }}
-                                                imgStyle={{ objectPosition: "center top" }}
-                                                alt="Screenshot of Weather App Project"
-                                            />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="projects__item__details">
-                                    <motion.div className="projects__item__head" variants={childVariants}>
-                                        <h4 className="projects__item__head__title">Weather App</h4>
-                                        <p className="projects__item__head__date">January 2020</p>
-                                    </motion.div>
-                                    <motion.p className="projects__item__body" variants={childVariants}>
-                                        A simple weather app that fetches and displays the current local timezone, weather, and temperature of a city using the API from{" "}
-                                        <span className="is-italic">OpenWeatherMap</span>. Querying letters in the search box will return a list of available cities.
-                                    </motion.p>
-                                    <motion.div className="projects__item__foot" variants={childVariants}>
-                                        <ul className="projects__item__foot__tools">
-                                            <li>HTML</li>
-                                            <li>Sass</li>
-                                            <li>JavaScript</li>
-                                            <li>API</li>
-                                        </ul>
-                                        <ul className="projects__item__foot__links">
-                                            <li>
-                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/weather-app" target="_blank">
-                                                    <SiGithub />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a rel="noopener noreferrer" href="https://denzeltl.github.io/weather-app/" target="_blank">
                                                     <FiExternalLink />
                                                 </a>
                                             </li>
