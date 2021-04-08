@@ -1,6 +1,6 @@
 # Portfolio 2020
 
-My updated personal portfolio site. Created with Gatsby and hosted on Netlify. I used Netlify Forms for the contact form and Framer Motion for the animations and page transitions.
+My updated personal portfolio site where I showcase my latest projects. Created with Gatsby and hosted on Netlify. I used Netlify Forms for the contact form and Framer Motion for the animations and page transitions.
 
 View project [here](https://www.denzeltl.com/)
 
