@@ -16,6 +16,13 @@ import "../styles/projects-page.scss";
 const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
         query {
+            projectChess: file(relativePath: { eq: "project-chess.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 600) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
             projectTime: file(relativePath: { eq: "project-time.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 600) {
@@ -122,6 +129,7 @@ const ProjectsPage = () => {
     const projectElevenRefAnimation = useAnimation();
     const projectTwelveRefAnimation = useAnimation();
     const projectThirteenRefAnimation = useAnimation();
+    const projectFourteenRefAnimation = useAnimation();
     const [projectOneRef, projectOneRefView] = useInView({
         triggerOnce: true,
         rootMargin: "-50px",
@@ -171,6 +179,10 @@ const ProjectsPage = () => {
         rootMargin: "-50px",
     });
     const [projectThirteenRef, projectThirteenRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: "-50px",
+    });
+    const [projectFourteenRef, projectFourteenRefView] = useInView({
         triggerOnce: true,
         rootMargin: "-50px",
     });
@@ -274,6 +286,11 @@ const ProjectsPage = () => {
             projectThirteenRefAnimation.start("visible");
         }
     }, [projectThirteenRefAnimation, projectThirteenRefView]);
+    useEffect(() => {
+        if (projectFourteenRefView) {
+            projectFourteenRefAnimation.start("visible");
+        }
+    }, [projectFourteenRefAnimation, projectFourteenRefView]);
     return (
         <>
             <Layout>
@@ -308,6 +325,51 @@ const ProjectsPage = () => {
                 <section className="projects-page">
                     <div className="container">
                         <ul className="projects-page__list">
+                            <motion.li className="projects-page__item" ref={projectFourteenRef} animate={projectFourteenRefAnimation} initial="hidden" variants={parentVariants}>
+                                <div className="projects-page__item__image">
+                                    <a href="https://chess-notation-trainer.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                        <div className="overlay"></div>
+                                        <div className="text">
+                                            <p>
+                                                Visit Site <FiExternalLink />
+                                            </p>
+                                        </div>
+                                        <div className="image-container">
+                                            <Img fluid={data.projectChess.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Chess Notation Trainer Project" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="projects-page__item__details">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
+                                        <h3 className="projects-page__item__head__title">Chess Notation Trainer</h3>
+                                        <p className="projects-page__item__head__date">May 2021</p>
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
+                                        Train yourself to visualize chess coordinates quickly with this app. Familiarizing yourself with the notations can be very beneficial when learning how to play
+                                        chess as it helps you identify positions fast.
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
+                                        <ul className="projects-page__item__foot__tools">
+                                            <li>React</li>
+                                            <li>TypeScript</li>
+                                            <li>Material UI</li>
+                                            <li>PWA</li>
+                                        </ul>
+                                        <ul className="projects-page__item__foot__links">
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/chess-notation-trainer" target="_blank">
+                                                    <SiGithub />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://chess-notation-trainer.netlify.app/" target="_blank">
+                                                    <FiExternalLink />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
+                                </div>
+                            </motion.li>
                             <motion.li className="projects-page__item" ref={projectThirteenRef} animate={projectThirteenRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://time-until.netlify.app/" rel="noopener noreferrer" target="_blank">

@@ -26,7 +26,7 @@ const IndexPage = () => {
                     }
                 }
             }
-            projectPomodoro: file(relativePath: { eq: "project-pomodoro.png" }) {
+            projectChess: file(relativePath: { eq: "project-chess.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 700) {
                         ...GatsbyImageSharpFluid
@@ -424,6 +424,51 @@ const IndexPage = () => {
                         <ul className="projects__list">
                             <motion.li className="projects__item" ref={projectOneRef} animate={projectOneRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects__item__image">
+                                    <a href="https://chess-notation-trainer.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                        <div className="overlay"></div>
+                                        <div className="text">
+                                            <p>
+                                                Visit Site <FiExternalLink />
+                                            </p>
+                                        </div>
+                                        <div className="image-container">
+                                            <Img fluid={data.projectChess.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Chess Notation Trainer Project" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="projects__item__details">
+                                    <motion.div className="projects__item__head" variants={childVariants}>
+                                        <h4 className="projects__item__head__title">Chess Notation Trainer</h4>
+                                        <p className="projects__item__head__date">May 2021</p>
+                                    </motion.div>
+                                    <motion.p className="projects__item__body" variants={childVariants}>
+                                        Train yourself to visualize chess coordinates quickly with this app. Familiarizing yourself with the notations can be very beneficial when learning how to play
+                                        chess as it helps you identify positions fast.
+                                    </motion.p>
+                                    <motion.div className="projects__item__foot" variants={childVariants}>
+                                        <ul className="projects__item__foot__tools">
+                                            <li>React</li>
+                                            <li>TypeScript</li>
+                                            <li>Material UI</li>
+                                            <li>PWA</li>
+                                        </ul>
+                                        <ul className="projects__item__foot__links">
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/chess-notation-trainer" target="_blank">
+                                                    <SiGithub />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://chess-notation-trainer.netlify.app/" target="_blank">
+                                                    <FiExternalLink />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
+                                </div>
+                            </motion.li>
+                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
+                                <div className="projects__item__image">
                                     <a href="https://time-until.netlify.app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
                                         <div className="text">
@@ -458,51 +503,6 @@ const IndexPage = () => {
                                             </li>
                                             <li>
                                                 <a rel="noopener noreferrer" href="https://time-until.netlify.app/" target="_blank">
-                                                    <FiExternalLink />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </motion.div>
-                                </div>
-                            </motion.li>
-                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
-                                <div className="projects__item__image">
-                                    <a href="https://denzeltl-pomodoro.netlify.app/" rel="noopener noreferrer" target="_blank">
-                                        <div className="overlay"></div>
-                                        <div className="text">
-                                            <p>
-                                                Visit Site <FiExternalLink />
-                                            </p>
-                                        </div>
-                                        <div className="image-container">
-                                            <Img fluid={data.projectPomodoro.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Pomodoro Project" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="projects__item__details">
-                                    <motion.div className="projects__item__head" variants={childVariants}>
-                                        <h4 className="projects__item__head__title">Pomodoro Timer</h4>
-                                        <p className="projects__item__head__date">August 2020</p>
-                                    </motion.div>
-                                    <motion.p className="projects__item__body" variants={childVariants}>
-                                        A PWA Pomodoro Timer made with React which can be installed as a desktop or mobile app. Aside from its timer feature, it also has reminders which can be seen
-                                        inside the settings.
-                                    </motion.p>
-                                    <motion.div className="projects__item__foot" variants={childVariants}>
-                                        <ul className="projects__item__foot__tools">
-                                            <li>React</li>
-                                            <li>Sass</li>
-                                            <li>PWA</li>
-                                            <li>Netlify</li>
-                                        </ul>
-                                        <ul className="projects__item__foot__links">
-                                            <li>
-                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/pomodoro" target="_blank">
-                                                    <SiGithub />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a rel="noopener noreferrer" href="https://denzeltl-pomodoro.netlify.app/" target="_blank">
                                                     <FiExternalLink />
                                                 </a>
                                             </li>
