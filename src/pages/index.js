@@ -26,6 +26,13 @@ const IndexPage = () => {
                     }
                 }
             }
+            projectNotes: file(relativePath: { eq: "project-notes.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 700) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
             projectChess: file(relativePath: { eq: "project-chess.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 700) {
@@ -34,13 +41,6 @@ const IndexPage = () => {
                 }
             }
             projectTime: file(relativePath: { eq: "project-time.png" }) {
-                childImageSharp {
-                    fluid(maxWidth: 700) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
-            projectRr: file(relativePath: { eq: "project-rr.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 700) {
                         ...GatsbyImageSharpFluid
@@ -424,6 +424,51 @@ const IndexPage = () => {
                         <ul className="projects__list">
                             <motion.li className="projects__item" ref={projectOneRef} animate={projectOneRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects__item__image">
+                                    <a href="https://denzeltl-notes.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                        <div className="overlay"></div>
+                                        <div className="text">
+                                            <p>
+                                                Visit Site <FiExternalLink />
+                                            </p>
+                                        </div>
+                                        <div className="image-container">
+                                            <Img fluid={data.projectNotes.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Notes App Project" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="projects__item__details">
+                                    <motion.div className="projects__item__head" variants={childVariants}>
+                                        <h4 className="projects__item__head__title">Notes App</h4>
+                                        <p className="projects__item__head__date">July 2021</p>
+                                    </motion.div>
+                                    <motion.p className="projects__item__body" variants={childVariants}>
+                                        Create your account to privately access your personal notes on any device. Features cloud syncing of notes and supports a few text styles with its markdown
+                                        editor.
+                                    </motion.p>
+                                    <motion.div className="projects__item__foot" variants={childVariants}>
+                                        <ul className="projects__item__foot__tools">
+                                            <li>React</li>
+                                            <li>TypeScript</li>
+                                            <li>Material UI</li>
+                                            <li>Firebase</li>
+                                        </ul>
+                                        <ul className="projects__item__foot__links">
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/notes-app" target="_blank">
+                                                    <SiGithub />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://denzeltl-notes.netlify.app/" target="_blank">
+                                                    <FiExternalLink />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
+                                </div>
+                            </motion.li>
+                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
+                                <div className="projects__item__image">
                                     <a href="https://chess-notation-trainer.netlify.app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
                                         <div className="text">
@@ -467,7 +512,7 @@ const IndexPage = () => {
                                     </motion.div>
                                 </div>
                             </motion.li>
-                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
+                            <motion.li className="projects__item" ref={projectThreeRef} animate={projectThreeRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects__item__image">
                                     <a href="https://time-until.netlify.app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -503,50 +548,6 @@ const IndexPage = () => {
                                             </li>
                                             <li>
                                                 <a rel="noopener noreferrer" href="https://time-until.netlify.app/" target="_blank">
-                                                    <FiExternalLink />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </motion.div>
-                                </div>
-                            </motion.li>
-                            <motion.li className="projects__item" ref={projectThreeRef} animate={projectThreeRefAnimation} initial="hidden" variants={parentVariants}>
-                                <div className="projects__item__image">
-                                    <a rel="noopener noreferrer" href="https://denzeltl.github.io/rr-wraith/" target="_blank">
-                                        <div className="overlay"></div>
-                                        <div className="text">
-                                            <p>
-                                                Visit Site <FiExternalLink />
-                                            </p>
-                                        </div>
-                                        <div className="image-container">
-                                            <Img fluid={data.projectRr.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Rolls-Royce Project" />
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="projects__item__details">
-                                    <motion.div className="projects__item__head" variants={childVariants}>
-                                        <h4 className="projects__item__head__title">Rolls-Royce Wraith Landing Page</h4>
-                                        <p className="projects__item__head__date">September 2018</p>
-                                    </motion.div>
-                                    <motion.p className="projects__item__body" variants={childVariants}>
-                                        My first website project created — this challenge is taken from freeCodeCamp's{" "}
-                                        <span className="is-italic">Responsive Web Design - Build a Product Landing Page</span> project. I redesigned the landing page of Rolls-Royce Wraith.
-                                    </motion.p>
-                                    <motion.div className="projects__item__foot" variants={childVariants}>
-                                        <ul className="projects__item__foot__tools">
-                                            <li>HTML</li>
-                                            <li>CSS</li>
-                                            <li>Bulma</li>
-                                        </ul>
-                                        <ul className="projects__item__foot__links">
-                                            <li>
-                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/rr-wraith" target="_blank">
-                                                    <SiGithub />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a rel="noopener noreferrer" href="https://denzeltl.github.io/rr-wraith/" target="_blank">
                                                     <FiExternalLink />
                                                 </a>
                                             </li>

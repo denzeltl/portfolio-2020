@@ -16,6 +16,13 @@ import "../styles/projects-page.scss";
 const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
         query {
+            projectNotes: file(relativePath: { eq: "project-notes.jpg" }) {
+                childImageSharp {
+                    fluid(maxWidth: 600) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
             projectChess: file(relativePath: { eq: "project-chess.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 600) {
@@ -130,6 +137,7 @@ const ProjectsPage = () => {
     const projectTwelveRefAnimation = useAnimation();
     const projectThirteenRefAnimation = useAnimation();
     const projectFourteenRefAnimation = useAnimation();
+    const projectFifteenRefAnimation = useAnimation();
     const [projectOneRef, projectOneRefView] = useInView({
         triggerOnce: true,
         rootMargin: "-50px",
@@ -183,6 +191,10 @@ const ProjectsPage = () => {
         rootMargin: "-50px",
     });
     const [projectFourteenRef, projectFourteenRefView] = useInView({
+        triggerOnce: true,
+        rootMargin: "-50px",
+    });
+    const [projectFifteenRef, projectFifteenRefView] = useInView({
         triggerOnce: true,
         rootMargin: "-50px",
     });
@@ -291,6 +303,11 @@ const ProjectsPage = () => {
             projectFourteenRefAnimation.start("visible");
         }
     }, [projectFourteenRefAnimation, projectFourteenRefView]);
+    useEffect(() => {
+        if (projectFifteenRefView) {
+            projectFifteenRefAnimation.start("visible");
+        }
+    }, [projectFifteenRefAnimation, projectFifteenRefView]);
     return (
         <>
             <Layout>
@@ -325,6 +342,51 @@ const ProjectsPage = () => {
                 <section className="projects-page">
                     <div className="container">
                         <ul className="projects-page__list">
+                            <motion.li className="projects-page__item" ref={projectFifteenRef} animate={projectFifteenRefAnimation} initial="hidden" variants={parentVariants}>
+                                <div className="projects-page__item__image">
+                                    <a href="https://denzeltl-notes.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                        <div className="overlay"></div>
+                                        <div className="text">
+                                            <p>
+                                                Visit Site <FiExternalLink />
+                                            </p>
+                                        </div>
+                                        <div className="image-container">
+                                            <Img fluid={data.projectNotes.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Notes App Project" />
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="projects-page__item__details">
+                                    <motion.div className="projects-page__item__head" variants={childVariants}>
+                                        <h3 className="projects-page__item__head__title">Notes App</h3>
+                                        <p className="projects-page__item__head__date">July 2021</p>
+                                    </motion.div>
+                                    <motion.p className="projects-page__item__body" variants={childVariants}>
+                                        Create your account to privately access your personal notes on any device. Features cloud syncing of notes and supports a few text styles with its markdown
+                                        editor.
+                                    </motion.p>
+                                    <motion.div className="projects-page__item__foot" variants={childVariants}>
+                                        <ul className="projects-page__item__foot__tools">
+                                            <li>React</li>
+                                            <li>TypeScript</li>
+                                            <li>Material UI</li>
+                                            <li>Firebase</li>
+                                        </ul>
+                                        <ul className="projects-page__item__foot__links">
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/notes-app" target="_blank">
+                                                    <SiGithub />
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="noopener noreferrer" href="https://denzeltl-notes.netlify.app/" target="_blank">
+                                                    <FiExternalLink />
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </motion.div>
+                                </div>
+                            </motion.li>
                             <motion.li className="projects-page__item" ref={projectFourteenRef} animate={projectFourteenRefAnimation} initial="hidden" variants={parentVariants}>
                                 <div className="projects-page__item__image">
                                     <a href="https://chess-notation-trainer.netlify.app/" rel="noopener noreferrer" target="_blank">
