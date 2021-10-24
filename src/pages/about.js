@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import { useInView } from 'react-intersection-observer';
-import { useAnimation, motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { useInView } from "react-intersection-observer";
+import { useAnimation, motion } from "framer-motion";
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Footer from '../components/footer';
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Footer from "../components/footer";
 
-import { HiChevronRight } from 'react-icons/hi';
+import { HiChevronRight } from "react-icons/hi";
 
-import '../styles/about-page.scss';
+import "../styles/about-page.scss";
 
 const AboutPage = () => {
     const data = useStaticQuery(graphql`
@@ -26,55 +26,68 @@ const AboutPage = () => {
     `);
     const jobs = [
         {
-            slug: 'ColCap',
-            position: 'Front End Web Developer',
-            company: 'ColCap Servicing Pty Ltd',
-            date: 'November 2020 - Present',
+            slug: "METER",
+            position: "Front End Web Developer",
+            company: "METER Group",
+            date: "October 2021 - Present",
             duties: [
-                'Create new and complex websites and landing pages from briefs',
-                'Develop functional and appealing web and mobile-based applications based on usability',
-                'Work with the Marketing Manager and Graphic Designer to identify deliverables',
-                'Adherence to best practice design',
-                'Quality assurance and integrity of all websites',
+                "Coding landing pages and microsites from mockups with high attention to design details and user experience",
+                "Adjust content and layouts of existing websites when needed",
+                "Optimize our microsite build framework for technical performance (page load speeds), SEO, and user experience",
+                "Implement and improve motion design on landing pages to bring web pages to life",
+                "Review and give feedback on code changes and front-end implementations",
             ],
         },
         {
-            slug: 'LH & C',
-            position: 'Web Developer',
-            company: 'LH & Creatives Inc',
-            date: 'October 2019 - November 2020',
+            slug: "ColCap",
+            position: "Front End Web Developer",
+            company: "ColCap Servicing Pty Ltd",
+            date: "November 2020 - October 2021",
             duties: [
-                'Build both interactive and responsive websites based from the provided design material',
-                'Create and use custom data from CMS like Wordpress for dynamic content updating',
+                "Create new and complex websites and landing pages from briefs",
+                "Develop functional and appealing web and mobile-based applications based on usability",
+                "Work with the Marketing Manager and Graphic Designer to identify deliverables",
+                "Adherence to best practice design",
+                "Quality assurance and integrity of all websites",
+            ],
+        },
+        {
+            slug: "LH & C",
+            position: "Web Developer",
+            company: "LH & Creatives Inc",
+            date: "October 2019 - November 2020",
+            duties: [
+                "Build both interactive and responsive websites based from the provided design material",
+                "Create and use custom data from CMS like Wordpress for dynamic content updating",
                 "Revise finished projects to meet client's expectations",
-                'Provide assistance to other team members by checking their work and making sure that all instructions are followed',
-                'Ensure work done is of high quality by adhering to company coding standards',
+                "Provide assistance to other team members by checking their work and making sure that all instructions are followed",
+                "Ensure work done is of high quality by adhering to company coding standards",
             ],
         },
         {
-            slug: 'BOS',
-            position: 'Processing Associate',
-            company: 'Boutique Outsource Solutions',
-            date: 'November 2017 – August 2019',
+            slug: "BOS",
+            position: "Processing Associate",
+            company: "Boutique Outsource Solutions",
+            date: "November 2017 – August 2019",
             duties: [
-                'Provide a high level of accurate and efficient data entry',
-                'Process, translate, and input corresponding data into third party systems',
-                'Merge and prepare document packs that are to be sent and signed by the clients',
-                'Meet daily service agreement goals in production and turnaround times',
-                'Maintain a high level of confidentiality and discretion over sensitive documents',
+                "Provide a high level of accurate and efficient data entry",
+                "Process, translate, and input corresponding data into third party systems",
+                "Merge and prepare document packs that are to be sent and signed by the clients",
+                "Meet daily service agreement goals in production and turnaround times",
+                "Maintain a high level of confidentiality and discretion over sensitive documents",
             ],
         },
         {
             slug: "Shoti's",
-            position: 'Owner / Manager',
-            company: 'Shoti’s Dimsum House',
-            date: 'October 2015 – July 2017',
+            position: "Owner / Manager",
+            company: "Shoti’s Dimsum House",
+            date: "October 2015 – July 2017",
             duties: [
-                'Handle and manage food stall',
-                'Analyze sales forecasts to develop specific objectives',
-                'Plan and implement sales strategies',
-                'Foster strong working relationship with employees',
-                'Efficiently cater customers’ needs and wants',
+                "Handle and manage food stall",
+                "Analyze sales forecasts to develop specific objectives",
+                "Plan and implement sales strategies",
+                "Foster strong working relationship with employees",
+                "Efficiently cater customers’ needs and wants",
             ],
         },
     ];
@@ -85,15 +98,15 @@ const AboutPage = () => {
     const experienceRefAnimation = useAnimation();
     const [backgroundImageRef, backgroundImageRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [backgroundTextRef, backgroundTextRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const [experienceRef, experienceRefView] = useInView({
         triggerOnce: true,
-        rootMargin: '-50px',
+        rootMargin: "-50px",
     });
     const headlineVariants = {
         visible: {
@@ -121,17 +134,17 @@ const AboutPage = () => {
     };
     useEffect(() => {
         if (backgroundImageRefView) {
-            backgroundImageRefAnimation.start('visible');
+            backgroundImageRefAnimation.start("visible");
         }
     }, [backgroundImageRefAnimation, backgroundImageRefView]);
     useEffect(() => {
         if (backgroundTextRefView) {
-            backgroundTextRefAnimation.start('visible');
+            backgroundTextRefAnimation.start("visible");
         }
     }, [backgroundTextRefAnimation, backgroundTextRefView]);
     useEffect(() => {
         if (experienceRefView) {
-            experienceRefAnimation.start('visible');
+            experienceRefAnimation.start("visible");
         }
     }, [experienceRefAnimation, experienceRefView]);
     return (
@@ -172,9 +185,9 @@ const AboutPage = () => {
                                     motivated me to study web development.
                                 </p>
                                 <p className="about-page__background__p">
-                                    I started teaching myself on July 2018 and has continuously been learning since then. The main resources I use for studying are{' '}
-                                    <span className="is-italic">Stack Overflow</span>, <span className="is-italic">YouTube</span> videos, online courses from <span className="is-italic">Udemy</span>{' '}
-                                    and <span className="is-italic">Codecademy</span>, and coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and{' '}
+                                    I started teaching myself on July 2018 and has continuously been learning since then. The main resources I use for studying are{" "}
+                                    <span className="is-italic">Stack Overflow</span>, <span className="is-italic">YouTube</span> videos, online courses from <span className="is-italic">Udemy</span>{" "}
+                                    and <span className="is-italic">Codecademy</span>, and coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and{" "}
                                     <span className="is-italic">The Odin Project</span>. On October 2019, I've landed my first professional job as a web developer.
                                 </p>
                             </motion.div>
@@ -190,7 +203,7 @@ const AboutPage = () => {
                                 <ul className="about-page__experience__tabs">
                                     {jobs.map((job, index) => {
                                         return (
-                                            <li key={index} className={`about-page__experience__tab ${activeTab === index ? 'is-active' : ''}`}>
+                                            <li key={index} className={`about-page__experience__tab ${activeTab === index ? "is-active" : ""}`}>
                                                 <button
                                                     onClick={() => {
                                                         setActiveTab(index);
