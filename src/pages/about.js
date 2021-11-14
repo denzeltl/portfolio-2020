@@ -344,6 +344,38 @@ const AboutPage = () => {
                                         </ul>
                                     </motion.div>
                                 )}
+                                {activeTab === 4 && (
+                                    <motion.div
+                                        animate="visible"
+                                        initial="hidden"
+                                        variants={{
+                                            visible: {
+                                                opacity: 1,
+                                                y: 0,
+                                                ease: [0.6, 0.05, -0.01, 0.9],
+                                            },
+                                            hidden: {
+                                                opacity: 0,
+                                                y: 72,
+                                            },
+                                        }}
+                                        className="about-page__experience__work"
+                                    >
+                                        <h4 className="about-page__experience__position">{position}</h4>
+                                        <h5 className="about-page__experience__company">
+                                            at <span>{company}</span>
+                                        </h5>
+                                        <p className="about-page__experience__date">{date}</p>
+                                        <ul className="about-page__experience__duties">
+                                            {duties.map((duty, index) => (
+                                                <li className="about-page__experience__duty" key={index}>
+                                                    <HiChevronRight />
+                                                    <p>{duty}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                )}
                             </div>
                         </motion.div>
                     </section>
