@@ -26,10 +26,24 @@ const AboutPage = () => {
     `);
     const jobs = [
         {
+            slug: "Lüp",
+            position: "Front-End Web Developer",
+            company: "Lüp Events",
+            date: "June 2023 - Present",
+            duties: [
+                "Develop new user-facing web or system features",
+                "Translate mock-up designs or wireframes made by the designers into a front-end code",
+                "Ensure all client-facing websites or systems are mobile and tablet responsive",
+                "Build reusable code and libraries for future use",
+                "Optimise application for maximum speed and scalability",
+                "Collaborate with back-end developers and designers to improve usability",
+            ],
+        },
+        {
             slug: "METER",
-            position: "Front End Web Developer",
+            position: "Front-End Web Developer",
             company: "METER Group",
-            date: "October 2021 - Present",
+            date: "October 2021 - May 2023",
             duties: [
                 "Coding landing pages and microsites from mockups with high attention to design details and user experience",
                 "Adjust content and layouts of existing websites when needed",
@@ -40,7 +54,7 @@ const AboutPage = () => {
         },
         {
             slug: "ColCap",
-            position: "Front End Web Developer",
+            position: "Front-End Web Developer",
             company: "ColCap Servicing Pty Ltd",
             date: "November 2020 - October 2021",
             duties: [
@@ -169,41 +183,72 @@ const AboutPage = () => {
                                 },
                             }}
                         >
-                            Hello! I’m Denzel Tiam-Lee, a web developer based in Quezon City, Philippines. I enjoy creating well-designed, responsive, and accessible websites by means of writing clean
-                            and maintainable code.
+                            Hello! I’m Denzel Tiam-Lee, a web developer based in Quezon City, Philippines. I enjoy
+                            creating well-designed, responsive, and accessible websites by means of writing clean and
+                            maintainable code.
                         </motion.p>
                     </motion.div>
                 </section>
                 <div className="about-page">
                     <section className="about-page__background">
                         <div className="container about-page__background__container">
-                            <motion.div className="about-page__background__text" ref={backgroundTextRef} animate={backgroundTextRefAnimation} initial="hidden" variants={scrollVariants}>
+                            <motion.div
+                                className="about-page__background__text"
+                                ref={backgroundTextRef}
+                                animate={backgroundTextRefAnimation}
+                                initial="hidden"
+                                variants={scrollVariants}
+                            >
                                 <h3 className="title">Background</h3>
                                 <p className="about-page__background__p">
-                                    I went to college at University of Santo Tomas and graduated with a degree in BS Entrepreneurship. Shortly after graduating, I got hired as a processing associate
-                                    in a BPO company. Eventually, I have decided to shift careers because I’ve always been curious with how the web works. My curiosity and desire to take on challenges
+                                    I went to college at University of Santo Tomas and graduated with a degree in BS
+                                    Entrepreneurship. Shortly after graduating, I got hired as a processing associate in
+                                    a BPO company. Eventually, I decided to shift careers because I’ve always been
+                                    curious with how the web works. My curiosity and desire to take on challenges
                                     motivated me to study web development.
                                 </p>
                                 <p className="about-page__background__p">
-                                    I started teaching myself on July 2018 and has continuously been learning since then. The main resources I use for studying are{" "}
-                                    <span className="is-italic">Stack Overflow</span>, <span className="is-italic">YouTube</span> videos, online courses from <span className="is-italic">Udemy</span>{" "}
-                                    and <span className="is-italic">Codecademy</span>, and coding bootcamps such as <span className="is-italic">freeCodeCamp</span> and{" "}
-                                    <span className="is-italic">The Odin Project</span>. On October 2019, I've landed my first professional job as a web developer.
+                                    I started teaching myself on July 2018 and has continuously been learning since
+                                    then. The main resources I use for studying are{" "}
+                                    <span className="is-italic">Stack Overflow</span>,{" "}
+                                    <span className="is-italic">YouTube</span> videos, online courses from{" "}
+                                    <span className="is-italic">Udemy</span> and{" "}
+                                    <span className="is-italic">Codecademy</span>, and coding bootcamps such as{" "}
+                                    <span className="is-italic">freeCodeCamp</span> and{" "}
+                                    <span className="is-italic">The Odin Project</span>. On October 2019, I landed my
+                                    first professional job as a web developer.
                                 </p>
                             </motion.div>
-                            <motion.div className="about-page__background__image" ref={backgroundImageRef} animate={backgroundImageRefAnimation} initial="hidden" variants={scrollVariants}>
+                            <motion.div
+                                className="about-page__background__image"
+                                ref={backgroundImageRef}
+                                animate={backgroundImageRefAnimation}
+                                initial="hidden"
+                                variants={scrollVariants}
+                            >
                                 <Img fluid={data.bodyDp.childImageSharp.fluid} alt="Head Display Picture" />
                             </motion.div>
                         </div>
                     </section>
                     <section className="about-page__experience">
-                        <motion.div className="container" ref={experienceRef} animate={experienceRefAnimation} initial="hidden" variants={scrollVariants}>
+                        <motion.div
+                            className="container"
+                            ref={experienceRef}
+                            animate={experienceRefAnimation}
+                            initial="hidden"
+                            variants={scrollVariants}
+                        >
                             <h3 className="title title__center">Experience</h3>
                             <div className="about-page__experience__container">
                                 <ul className="about-page__experience__tabs">
                                     {jobs.map((job, index) => {
                                         return (
-                                            <li key={index} className={`about-page__experience__tab ${activeTab === index ? "is-active" : ""}`}>
+                                            <li
+                                                key={index}
+                                                className={`about-page__experience__tab ${
+                                                    activeTab === index ? "is-active" : ""
+                                                }`}
+                                            >
                                                 <button
                                                     onClick={() => {
                                                         setActiveTab(index);

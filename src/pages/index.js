@@ -11,7 +11,22 @@ import Footer from "../components/footer";
 
 import Particles from "react-particles-js";
 import { BsArrowRight } from "react-icons/bs";
-import { SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiSass, SiGatsby, SiMaterialUi, SiGit, SiGithub, SiNpm, SiGraphql, SiNetlify } from "react-icons/si";
+import {
+    SiHtml5,
+    SiCss3,
+    SiJavascript,
+    SiTypescript,
+    SiReact,
+    SiTailwindcss,
+    SiNextdotjs,
+    SiMaterialUi,
+    SiGit,
+    SiGithub,
+    SiNpm,
+    SiFigma,
+    SiN,
+    SiTailwindcssetlify,
+} from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 
 import "../styles/index.scss";
@@ -280,7 +295,8 @@ const IndexPage = () => {
                             }}
                         >
                             I’m a Web Developer based in Quezon City, Philippines.
-                            <br className="is-pc" /> I enjoy creating well-designed, responsive, and accessible websites.
+                            <br className="is-pc" /> I enjoy creating well-designed, responsive, and accessible
+                            websites.
                         </motion.p>
                         <motion.div
                             className="is-inline-block"
@@ -325,7 +341,8 @@ const IndexPage = () => {
                         >
                             <h3 className="title about__title">About Me</h3>
                             <p className="about__text">
-                                I'm passionate about the things that I do. I continuously seek knowledge from different challenges and experiences. During my free time, I like to learn to keep myself
+                                I'm passionate about the things that I do. I continuously seek knowledge from different
+                                challenges and experiences. During my free time, I like to learn to keep myself
                                 up-to-date with the latest technologies and find ways to further improve my skill set.
                             </p>
                             <motion.div className="is-inline-block" variants={buttonVariants}>
@@ -334,22 +351,46 @@ const IndexPage = () => {
                                 </Link>
                             </motion.div>
                         </motion.div>
-                        <motion.div className="about__image" ref={aboutImageRef} animate={aboutImageRefAnimation} initial="hidden" variants={scrollVariants}>
+                        <motion.div
+                            className="about__image"
+                            ref={aboutImageRef}
+                            animate={aboutImageRefAnimation}
+                            initial="hidden"
+                            variants={scrollVariants}
+                        >
                             <Img fluid={data.headDp.childImageSharp.fluid} alt="Head Display Picture" />
                         </motion.div>
                     </div>
                 </section>
                 <section className="skills">
                     <div className="container">
-                        <motion.h3 className="title title__center skills__title" ref={skillsRef} animate={skillsRefAnimation} initial="hidden" variants={scrollVariants}>
+                        <motion.h3
+                            className="title title__center skills__title"
+                            ref={skillsRef}
+                            animate={skillsRefAnimation}
+                            initial="hidden"
+                            variants={scrollVariants}
+                        >
                             Skills
                         </motion.h3>
                         <div className="skills__container">
-                            <motion.p className="skills__container__title" ref={skillsTextRef} animate={skillsTextRefAnimation} initial="hidden" variants={scrollVariants}>
+                            <motion.p
+                                className="skills__container__title"
+                                ref={skillsTextRef}
+                                animate={skillsTextRefAnimation}
+                                initial="hidden"
+                                variants={scrollVariants}
+                            >
                                 These are the main languages, frameworks / libraries, and tools that I use / have used.
                             </motion.p>
                             <div className="skills__container__content">
-                                <motion.div className="skills__skillset" ref={skillsetOneRef} animate={skillsetOneRefAnimation} initial="hidden" variants={parentVariants}>
+                                <motion.div
+                                    className="skills__skillset"
+                                    ref={skillsetOneRef}
+                                    animate={skillsetOneRefAnimation}
+                                    initial="hidden"
+                                    variants={parentVariants}
+                                >
                                     <h4 className="skills__skillset__title">Languages</h4>
                                     <ul className="skills__skillset__list">
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
@@ -370,7 +411,13 @@ const IndexPage = () => {
                                         </motion.li>
                                     </ul>
                                 </motion.div>
-                                <motion.div className="skills__skillset" ref={skillsetTwoRef} animate={skillsetTwoRefAnimation} initial="hidden" variants={parentVariants}>
+                                <motion.div
+                                    className="skills__skillset"
+                                    ref={skillsetTwoRef}
+                                    animate={skillsetTwoRefAnimation}
+                                    initial="hidden"
+                                    variants={parentVariants}
+                                >
                                     <h4 className="skills__skillset__title">Frameworks / Libraries</h4>
                                     <ul className="skills__skillset__list">
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
@@ -378,12 +425,12 @@ const IndexPage = () => {
                                             <p className="skills__skillset__name">React</p>
                                         </motion.li>
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
-                                            <SiGatsby className="skills__skillset__icon" />
-                                            <p className="skills__skillset__name">Gatsby</p>
+                                            <SiNextdotjs className="skills__skillset__icon" />
+                                            <p className="skills__skillset__name">Next.js</p>
                                         </motion.li>
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
-                                            <SiSass className="skills__skillset__icon" />
-                                            <p className="skills__skillset__name">Sass</p>
+                                            <SiTailwindcss className="skills__skillset__icon" />
+                                            <p className="skills__skillset__name">Tailwind CSS</p>
                                         </motion.li>
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiMaterialUi className="skills__skillset__icon" />
@@ -391,7 +438,13 @@ const IndexPage = () => {
                                         </motion.li>
                                     </ul>
                                 </motion.div>
-                                <motion.div className="skills__skillset" ref={skillsetThreeRef} animate={skillsetThreeRefAnimation} initial="hidden" variants={parentVariants}>
+                                <motion.div
+                                    className="skills__skillset"
+                                    ref={skillsetThreeRef}
+                                    animate={skillsetThreeRefAnimation}
+                                    initial="hidden"
+                                    variants={parentVariants}
+                                >
                                     <h4 className="skills__skillset__title">Tools</h4>
                                     <ul className="skills__skillset__list">
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
@@ -403,12 +456,12 @@ const IndexPage = () => {
                                             <p className="skills__skillset__name">npm</p>
                                         </motion.li>
                                         <motion.li className="skills__skillset__item" variants={childVariants}>
-                                            <SiGraphql className="skills__skillset__icon" />
-                                            <p className="skills__skillset__name">GraphQL</p>
-                                        </motion.li>
-                                        <motion.li className="skills__skillset__item" variants={childVariants}>
                                             <SiNetlify className="skills__skillset__icon" />
                                             <p className="skills__skillset__name">Netlify</p>
+                                        </motion.li>
+                                        <motion.li className="skills__skillset__item" variants={childVariants}>
+                                            <SiFigma className="skills__skillset__icon" />
+                                            <p className="skills__skillset__name">Figma</p>
                                         </motion.li>
                                     </ul>
                                 </motion.div>
@@ -418,13 +471,29 @@ const IndexPage = () => {
                 </section>
                 <section className="projects">
                     <div className="container projects__container">
-                        <motion.h3 className="title title__center projects__title" ref={projectsRef} animate={projectsRefAnimation} initial="hidden" variants={scrollVariants}>
+                        <motion.h3
+                            className="title title__center projects__title"
+                            ref={projectsRef}
+                            animate={projectsRefAnimation}
+                            initial="hidden"
+                            variants={scrollVariants}
+                        >
                             Featured Projects
                         </motion.h3>
                         <ul className="projects__list">
-                            <motion.li className="projects__item" ref={projectOneRef} animate={projectOneRefAnimation} initial="hidden" variants={parentVariants}>
+                            <motion.li
+                                className="projects__item"
+                                ref={projectOneRef}
+                                animate={projectOneRefAnimation}
+                                initial="hidden"
+                                variants={parentVariants}
+                            >
                                 <div className="projects__item__image">
-                                    <a href="https://denzeltl-notes.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                    <a
+                                        href="https://denzeltl-notes.netlify.app/"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
                                         <div className="overlay"></div>
                                         <div className="text">
                                             <p>
@@ -432,7 +501,11 @@ const IndexPage = () => {
                                             </p>
                                         </div>
                                         <div className="image-container">
-                                            <Img fluid={data.projectNotes.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Notes App Project" />
+                                            <Img
+                                                fluid={data.projectNotes.childImageSharp.fluid}
+                                                style={{ maxHeight: "21rem" }}
+                                                alt="Screenshot of Notes App Project"
+                                            />
                                         </div>
                                     </a>
                                 </div>
@@ -442,7 +515,8 @@ const IndexPage = () => {
                                         <p className="projects__item__head__date">July 2021</p>
                                     </motion.div>
                                     <motion.p className="projects__item__body" variants={childVariants}>
-                                        Create your account to privately access your personal notes on any device. Features cloud syncing of notes and supports a few text styles with its markdown
+                                        Create your account to privately access your personal notes on any device.
+                                        Features cloud syncing of notes and supports a few text styles with its markdown
                                         editor.
                                     </motion.p>
                                     <motion.div className="projects__item__foot" variants={childVariants}>
@@ -454,12 +528,20 @@ const IndexPage = () => {
                                         </ul>
                                         <ul className="projects__item__foot__links">
                                             <li>
-                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/notes-app" target="_blank">
+                                                <a
+                                                    rel="noopener noreferrer"
+                                                    href="https://github.com/denzeltl/notes-app"
+                                                    target="_blank"
+                                                >
                                                     <SiGithub />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a rel="noopener noreferrer" href="https://denzeltl-notes.netlify.app/" target="_blank">
+                                                <a
+                                                    rel="noopener noreferrer"
+                                                    href="https://denzeltl-notes.netlify.app/"
+                                                    target="_blank"
+                                                >
                                                     <FiExternalLink />
                                                 </a>
                                             </li>
@@ -467,9 +549,19 @@ const IndexPage = () => {
                                     </motion.div>
                                 </div>
                             </motion.li>
-                            <motion.li className="projects__item" ref={projectTwoRef} animate={projectTwoRefAnimation} initial="hidden" variants={parentVariants}>
+                            <motion.li
+                                className="projects__item"
+                                ref={projectTwoRef}
+                                animate={projectTwoRefAnimation}
+                                initial="hidden"
+                                variants={parentVariants}
+                            >
                                 <div className="projects__item__image">
-                                    <a href="https://chess-notation-trainer.netlify.app/" rel="noopener noreferrer" target="_blank">
+                                    <a
+                                        href="https://chess-notation-trainer.netlify.app/"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
                                         <div className="overlay"></div>
                                         <div className="text">
                                             <p>
@@ -477,7 +569,11 @@ const IndexPage = () => {
                                             </p>
                                         </div>
                                         <div className="image-container">
-                                            <Img fluid={data.projectChess.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Chess Notation Trainer Project" />
+                                            <Img
+                                                fluid={data.projectChess.childImageSharp.fluid}
+                                                style={{ maxHeight: "21rem" }}
+                                                alt="Screenshot of Chess Notation Trainer Project"
+                                            />
                                         </div>
                                     </a>
                                 </div>
@@ -487,8 +583,9 @@ const IndexPage = () => {
                                         <p className="projects__item__head__date">May 2021</p>
                                     </motion.div>
                                     <motion.p className="projects__item__body" variants={childVariants}>
-                                        Train yourself to visualize chess coordinates quickly with this app. Familiarizing yourself with the notations can be very beneficial when learning how to play
-                                        chess as it helps you identify positions fast.
+                                        Train yourself to visualize chess coordinates quickly with this app.
+                                        Familiarizing yourself with the notations can be very beneficial when learning
+                                        how to play chess as it helps you identify positions fast.
                                     </motion.p>
                                     <motion.div className="projects__item__foot" variants={childVariants}>
                                         <ul className="projects__item__foot__tools">
@@ -499,12 +596,20 @@ const IndexPage = () => {
                                         </ul>
                                         <ul className="projects__item__foot__links">
                                             <li>
-                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/chess-notation-trainer" target="_blank">
+                                                <a
+                                                    rel="noopener noreferrer"
+                                                    href="https://github.com/denzeltl/chess-notation-trainer"
+                                                    target="_blank"
+                                                >
                                                     <SiGithub />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a rel="noopener noreferrer" href="https://chess-notation-trainer.netlify.app/" target="_blank">
+                                                <a
+                                                    rel="noopener noreferrer"
+                                                    href="https://chess-notation-trainer.netlify.app/"
+                                                    target="_blank"
+                                                >
                                                     <FiExternalLink />
                                                 </a>
                                             </li>
@@ -512,7 +617,13 @@ const IndexPage = () => {
                                     </motion.div>
                                 </div>
                             </motion.li>
-                            <motion.li className="projects__item" ref={projectThreeRef} animate={projectThreeRefAnimation} initial="hidden" variants={parentVariants}>
+                            <motion.li
+                                className="projects__item"
+                                ref={projectThreeRef}
+                                animate={projectThreeRefAnimation}
+                                initial="hidden"
+                                variants={parentVariants}
+                            >
                                 <div className="projects__item__image">
                                     <a href="https://time-until.netlify.app/" rel="noopener noreferrer" target="_blank">
                                         <div className="overlay"></div>
@@ -522,7 +633,11 @@ const IndexPage = () => {
                                             </p>
                                         </div>
                                         <div className="image-container">
-                                            <Img fluid={data.projectTime.childImageSharp.fluid} style={{ maxHeight: "21rem" }} alt="Screenshot of Time Until Project" />
+                                            <Img
+                                                fluid={data.projectTime.childImageSharp.fluid}
+                                                style={{ maxHeight: "21rem" }}
+                                                alt="Screenshot of Time Until Project"
+                                            />
                                         </div>
                                     </a>
                                 </div>
@@ -532,7 +647,8 @@ const IndexPage = () => {
                                         <p className="projects__item__head__date">March 2021</p>
                                     </motion.div>
                                     <motion.p className="projects__item__body" variants={childVariants}>
-                                        Display a countdown timer in days in your local time zone or specify a particular country to display in their time zone.
+                                        Display a countdown timer in days in your local time zone or specify a
+                                        particular country to display in their time zone.
                                     </motion.p>
                                     <motion.div className="projects__item__foot" variants={childVariants}>
                                         <ul className="projects__item__foot__tools">
@@ -542,12 +658,20 @@ const IndexPage = () => {
                                         </ul>
                                         <ul className="projects__item__foot__links">
                                             <li>
-                                                <a rel="noopener noreferrer" href="https://github.com/denzeltl/time-until" target="_blank">
+                                                <a
+                                                    rel="noopener noreferrer"
+                                                    href="https://github.com/denzeltl/time-until"
+                                                    target="_blank"
+                                                >
                                                     <SiGithub />
                                                 </a>
                                             </li>
                                             <li>
-                                                <a rel="noopener noreferrer" href="https://time-until.netlify.app/" target="_blank">
+                                                <a
+                                                    rel="noopener noreferrer"
+                                                    href="https://time-until.netlify.app/"
+                                                    target="_blank"
+                                                >
                                                     <FiExternalLink />
                                                 </a>
                                             </li>
@@ -556,7 +680,13 @@ const IndexPage = () => {
                                 </div>
                             </motion.li>
                         </ul>
-                        <motion.div className="is-inline-block" ref={projectsButtonRef} animate={projectsButtonRefAnimation} initial="hidden" variants={buttonVariants}>
+                        <motion.div
+                            className="is-inline-block"
+                            ref={projectsButtonRef}
+                            animate={projectsButtonRefAnimation}
+                            initial="hidden"
+                            variants={buttonVariants}
+                        >
                             <Link to="/projects" className="button projects__button">
                                 View More <BsArrowRight />
                             </Link>
