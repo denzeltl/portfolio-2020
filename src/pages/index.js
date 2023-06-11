@@ -24,8 +24,7 @@ import {
     SiGithub,
     SiNpm,
     SiFigma,
-    SiN,
-    SiTailwindcssetlify,
+    SiNetlify,
 } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 
